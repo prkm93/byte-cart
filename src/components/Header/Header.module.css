@@ -1,0 +1,77 @@
+.header_container {
+  background-color: #fff;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_container {
+  margin: 1rem;
+}
+
+.cloth_logo {
+  width: 6rem;
+  margin-top: 1rem;
+}
+
+.search_icon {
+  position: relative;
+  right: 2rem;
+  top: 0.2rem;
+}
+
+.search_box {
+  width: 25rem;
+  height: 2rem;
+  border-radius: 8px;
+  border: 2px solid rgb(152, 152, 152);
+  padding: 0 1rem;
+  background-color: rgb(233, 233, 233);
+  outline: none;
+}
+
+.search_box:focus {
+  border-color: rgb(159, 49, 115);
+  /* box-shadow: 0 0 5px rgb(159, 49, 115, 0.5); */
+}
+
+.nav_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav_item {
+  list-style-type: none;
+  margin: 0 0.5rem;
+}
+
+.nav_explore_link {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(159, 49, 115);
+}
+
+/**rgb(252, 109, 65)*/
+.btn_login {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(159, 49, 115);
+  color: rgb(159, 49, 115);
+  background-color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn_login:hover {
+  background-color: rgb(159, 49, 115);
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav_item_icon {
+  font-size: 2rem;
+  color: rgb(159, 49, 115);
+}
