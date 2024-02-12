@@ -1,6 +1,6 @@
 .header_container {
-  background-color: #fff;
-  height: 4rem;
+  background-color: #fcf7fa;
+  height: 4.3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,8 +11,7 @@
 }
 
 .cloth_logo {
-  width: 6rem;
-  margin-top: 1rem;
+  width: 4rem;
 }
 
 .search_icon {
@@ -27,13 +26,12 @@
   border-radius: 8px;
   border: 2px solid rgb(152, 152, 152);
   padding: 0 1rem;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(243, 243, 243);
   outline: none;
 }
 
 .search_box:focus {
   border-color: rgb(159, 49, 115);
-  /* box-shadow: 0 0 5px rgb(159, 49, 115, 0.5); */
 }
 
 .nav_links {
@@ -74,4 +72,6 @@
 .nav_item_icon {
   font-size: 2rem;
   color: rgb(159, 49, 115);
+  text-decoration: none;
+  cursor: pointer;
 }
