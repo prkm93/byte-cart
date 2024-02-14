@@ -43,18 +43,19 @@
 }
 
 .input_box:focus {
-  border-color: rgb(159, 49, 115);
+  border-color: #9f3173;
 }
 
 .btn_signup {
   padding: 0.5rem 1rem;
-  border: 1px solid rgb(159, 49, 115);
+  border: 1px solid #9f3173;
   background-color: #9f3173;
   color: #fff;
   border-radius: 8px;
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
+  width: 16rem;
 }
 
 .btn_signup:hover {
@@ -66,6 +67,6 @@
 .account_link {
   margin: 1rem 0;
   text-decoration: none;
-  color: rgb(159, 49, 115);
+  color: #9f3173;
   cursor: pointer;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Landing.module.css";
-import { categories } from "../../backend/db/categories";
 import electronics_img from "../../logos/electronic thumbail.png";
 
 const Landing = () => {

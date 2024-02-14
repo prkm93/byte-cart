@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../../context/AuthContext";
 import styles from "./Login.module.css";
+import Loader from "../../../components/Loader";
 
 const Login = () => {
+  const testCredentialList = [
+    {
+      email: "pradeep.kumar@gmail.com",
+      password: "PradeepM",
+    },
+    {
+      email: "godrej.wadia@gmail.com",
+      password: "GodrejW",
+    },
+    {
+      email: "raj.mallik@yahoo.com",
+      password: "RajM",
+    },
+  ];
+  const { isLoading, onLoginHandler } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const testCredentialSet = testCredentialList[Math.floor(Math.random() * 3)];
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    onLoginHandler(email, password);
+  };
+
+  const fillTestCredentials = (e) => {
+    e.preventDefault();
+    const { email, password } = testCredentialSet;
+    setEmail(email);
+    setPassword(password);
+    setTimeout(() => {
+      onLoginHandler(email, password);
+    }, 2000);
+  };
+
   return (
     <div className={styles.form_container}>
       <h2 className={styles.form_header}>Sign In</h2>
@@ -14,7 +51,10 @@ const Login = () => {
             className={styles.input_box}
             type="email"
             id="emailAddress"
+            required
+            value={email}
             placeholder="john.doe@systemEnterprises.com"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className={styles.input_wrapper}>
@@ -25,15 +65,27 @@ const Login = () => {
             className={styles.input_box}
             type="password"
             id="password"
+            required
+            value={password}
             placeholder="********"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button className={styles.btn_login}>
+        <button
+          type="submit"
+          className={styles.btn_login}
+          onClick={handleLogin}>
+          Login
+        </button>
+        <button
+          type="submit"
+          className={styles.btn_login}
+          onClick={fillTestCredentials}>
           SignIn with Test Credentials
         </button>
-        <a className={styles.account_link} href="/signup">
+        <Link className={styles.account_link} to={"/signup"}>
           Create new Account
-        </a>
+        </Link>
       </form>
     </div>
   );

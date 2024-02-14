@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Signup.module.css";
 
 const Signup = () => {
@@ -61,10 +62,12 @@ const Signup = () => {
             placeholder="********"
           />
         </div>
-        <button className={styles.btn_signup}>Create new account</button>
-        <a className={styles.account_link} href="/login">
+        <button type="submit" className={styles.btn_signup}>
+          Create new account
+        </button>
+        <Link className={styles.account_link} to={"/login"}>
           Already have an account
-        </a>
+        </Link>
       </form>
     </div>
   );
