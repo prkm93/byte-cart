@@ -8,6 +8,7 @@
 
 .logo_container {
   margin: 1rem;
+  cursor: pointer;
 }
 
 .cloth_logo {

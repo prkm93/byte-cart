@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Login.module.css";
 
-function Login() {
+const Login = () => {
   return (
     <div className={styles.form_container}>
       <h2 className={styles.form_header}>Sign In</h2>
@@ -14,7 +14,7 @@ function Login() {
             className={styles.input_box}
             type="email"
             id="emailAddress"
-            placeholder="xyz@apparelstore.com"
+            placeholder="john.doe@systemEnterprises.com"
           />
         </div>
         <div className={styles.input_wrapper}>
@@ -37,6 +37,6 @@ function Login() {
       </form>
     </div>
   );
-}
+};
 
 export default Login;
