@@ -1,6 +1,6 @@
 .form_container {
-  margin: 8rem auto;
-  width: 20rem;
+  margin: 6rem auto;
+  width: 23rem;
   height: auto;
   padding: 0.1rem 1rem;
   border-radius: 10px;
@@ -29,7 +29,7 @@
 }
 
 .input_box {
-  width: 15rem;
+  width: 19rem;
   height: 1.5rem;
   margin: 0.5rem 0;
   border-radius: 4px;
@@ -46,6 +46,11 @@
   border-color: #9f3173;
 }
 
+.error {
+  color: #d44950;
+  width: 19rem;
+}
+
 .btn_signup {
   padding: 0.5rem 1rem;
   border: 1px solid #9f3173;
@@ -55,7 +60,7 @@
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
-  width: 16rem;
+  width: 20rem;
 }
 
 .btn_signup:hover {

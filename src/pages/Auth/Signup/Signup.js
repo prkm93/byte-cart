@@ -1,12 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Signup.module.css";
+import { useAuth } from "../../../context/AuthContext";
 
 const Signup = () => {
+  const { signUpHandler } = useAuth();
+  const [userDetails, setUserDetails] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirm_password: "",
+  });
+  const [error, setError] = useState(false);
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+
+    if (userDetails.password !== userDetails.confirm_password) {
+      setError(true);
+      return;
+    }
+
+    signUpHandler(
+      userDetails.firstName,
+      userDetails.lastName,
+      userDetails.email,
+      userDetails.password
+    );
+
+    setUserDetails({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      confirm_password: "",
+    });
+  };
+
+  const handleUserDetails = (e) => {
+    setError(false);
+
+    setUserDetails({
+      ...userDetails,
+      [e.target.id]: e.target.value,
+    });
+  };
+
   return (
     <div className={styles.form_container}>
       <h2 className={styles.form_header}>Sign Up</h2>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSignUp}>
         <div className={styles.input_wrapper}>
           <label className={styles.input_label} htmlFor="firstName">
             First Name
@@ -16,6 +60,9 @@ const Signup = () => {
             type="input"
             id="firstName"
             placeholder="John"
+            required
+            value={userDetails.firstName}
+            onChange={handleUserDetails}
           />
         </div>
         <div className={styles.input_wrapper}>
@@ -27,17 +74,23 @@ const Signup = () => {
             type="input"
             id="lastName"
             placeholder="Doe"
+            required
+            value={userDetails.lastName}
+            onChange={handleUserDetails}
           />
         </div>
         <div className={styles.input_wrapper}>
-          <label className={styles.input_label} htmlFor="emailAddress">
+          <label className={styles.input_label} htmlFor="email">
             Email Address
           </label>
           <input
             className={styles.input_box}
             type="email"
-            id="emailAddress"
+            id="email"
+            required
             placeholder="john.doe@systemEnterprises.com"
+            value={userDetails.email}
+            onChange={handleUserDetails}
           />
         </div>
         <div className={styles.input_wrapper}>
@@ -48,7 +101,10 @@ const Signup = () => {
             className={styles.input_box}
             type="password"
             id="password"
+            required
             placeholder="********"
+            value={userDetails.password}
+            onChange={handleUserDetails}
           />
         </div>
         <div className={styles.input_wrapper}>
@@ -60,7 +116,15 @@ const Signup = () => {
             type="password"
             id="confirm_password"
             placeholder="********"
+            required
+            value={userDetails.confirm_password}
+            onChange={handleUserDetails}
           />
+          {error && (
+            <div className={styles.error}>
+              password and confirm password should match
+            </div>
+          )}
         </div>
         <button type="submit" className={styles.btn_signup}>
           Create new account

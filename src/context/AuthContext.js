@@ -23,25 +23,58 @@ const AuthProvider = ({ children }) => {
         if (encodedToken || foundUser) {
           localStorage.setItem(
             "userInfo",
-            JSON.stringify({ encodedToken, foundUser })
+            JSON.stringify({ encodedToken, user: foundUser })
           );
           setToken(encodedToken);
           setUserDetails(foundUser);
-          toast.success("user loggin in successfully");
+          toast.success("User logged in successfully");
           navigate("/");
         }
         setIsLoading(false);
       } catch (err) {
-        console.error(err.response.data);
-        toast.error(err.response.data.errors[0]);
+        console.error(err.response?.data);
+        toast.error(err.response?.data?.errors[0]);
         setIsLoading(false);
       }
     }, 1000);
   };
 
-  const signUpHandler = async (firstName, lastName, email, password) => {
-    try {
-    } catch (err) {}
+  const onLogoutHandler = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      localStorage.removeItem("userInfo");
+      setToken(null);
+      setUserDetails(null);
+      setIsLoading(false);
+      navigate("/login");
+    }, 1000);
+  };
+
+  const signUpHandler = (firstName, lastName, email, password) => {
+    setIsLoading(true);
+    setTimeout(async () => {
+      try {
+        const {
+          data: { encodedToken, createdUser },
+        } = await signupService(firstName, lastName, email, password);
+
+        if (encodedToken) {
+          localStorage.setItem(
+            "userInfo",
+            JSON.stringify({ encodedToken, user: createdUser })
+          );
+          setToken(encodedToken);
+          setUserDetails(createdUser);
+          toast.success("User signed up successfully");
+          navigate("/");
+        }
+        setIsLoading(false);
+      } catch (err) {
+        console.error(err.response?.data);
+        toast.error(err.response?.data?.errors[0]);
+        setIsLoading(false);
+      }
+    }, 1000);
   };
 
   return (
@@ -54,6 +87,7 @@ const AuthProvider = ({ children }) => {
         setIsLoading,
         onLoginHandler,
         signUpHandler,
+        onLogoutHandler,
       }}>
       {children}
     </AuthContext.Provider>

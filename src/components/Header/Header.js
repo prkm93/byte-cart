@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
@@ -10,12 +10,8 @@ import apparel_logo from "../../logos/apparel-icon.jpg";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const { token, setToken, userDetails } = useAuth();
+  const { token, onLogoutHandler } = useAuth();
   const navigate = useNavigate();
-  console.log("token ==>", token);
-  //   useEffect(() => {
-  //     setToken(localStorage.getItem("userInfo"));
-  //   }, [token]);
 
   return (
     <div className={styles.header_container}>
@@ -56,13 +52,7 @@ const Header = () => {
           </li>
           {token && (
             <li className={styles.nav_item}>
-              <button
-                className={styles.btn_login}
-                onClick={() => {
-                  localStorage.removeItem("userInfo");
-                  setToken("");
-                  navigate("/login");
-                }}>
+              <button className={styles.btn_login} onClick={onLogoutHandler}>
                 Logout
               </button>
             </li>
