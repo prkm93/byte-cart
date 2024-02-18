@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import styles from "./Login.module.css";
-import Loader from "../../../components/Loader";
 
 const Login = () => {
   const testCredentialList = [
@@ -19,7 +18,7 @@ const Login = () => {
       password: "RajM",
     },
   ];
-  const { isLoading, onLoginHandler } = useAuth();
+  const { onLoginHandler } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const testCredentialSet = testCredentialList[Math.floor(Math.random() * 3)];
@@ -30,19 +29,15 @@ const Login = () => {
   };
 
   const fillTestCredentials = (e) => {
-    e.preventDefault();
     const { email, password } = testCredentialSet;
     setEmail(email);
     setPassword(password);
-    setTimeout(() => {
-      onLoginHandler(email, password);
-    }, 2000);
   };
 
   return (
     <div className={styles.form_container}>
       <h2 className={styles.form_header}>Sign In</h2>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleLogin}>
         <div className={styles.input_wrapper}>
           <label className={styles.input_label} htmlFor="emailAddress">
             Email Address
@@ -71,10 +66,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button
-          type="submit"
-          className={styles.btn_login}
-          onClick={handleLogin}>
+        <button type="submit" className={styles.btn_login}>
           Login
         </button>
         <button

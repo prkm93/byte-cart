@@ -21,7 +21,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
       </Routes>
       <ToastSetter />
-      {!isLoading && (
+      {isLoading && (
         <div>
           <Loader />
         </div>

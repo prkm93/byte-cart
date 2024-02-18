@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
+
+import { useAuth } from "../../context/AuthContext";
 import apparel_logo from "../../logos/apparel-icon.jpg";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  const { token, setToken, userDetails } = useAuth();
   const navigate = useNavigate();
+  console.log("token ==>", token);
+  //   useEffect(() => {
+  //     setToken(localStorage.getItem("userInfo"));
+  //   }, [token]);
 
   return (
     <div className={styles.header_container}>
@@ -30,11 +38,15 @@ const Header = () => {
             </a>
           </li>
           <li className={styles.nav_item}>
-            <button
-              className={styles.btn_login}
-              onClick={() => navigate("/login")}>
-              Login
-            </button>
+            {token ? (
+              <CgProfile className={styles.profile_icon} />
+            ) : (
+              <button
+                className={styles.btn_login}
+                onClick={() => navigate("/login")}>
+                Login
+              </button>
+            )}
           </li>
           <li className={styles.nav_item}>
             <CiHeart className={styles.nav_item_icon} />
@@ -42,6 +54,19 @@ const Header = () => {
           <li className={styles.nav_item}>
             <IoCartOutline className={styles.nav_item_icon} />
           </li>
+          {token && (
+            <li className={styles.nav_item}>
+              <button
+                className={styles.btn_login}
+                onClick={() => {
+                  localStorage.removeItem("userInfo");
+                  setToken("");
+                  navigate("/login");
+                }}>
+                Logout
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </div>

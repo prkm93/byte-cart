@@ -70,6 +70,13 @@
   cursor: pointer;
 }
 
+.profile_icon {
+  font-size: 1.8rem;
+  color: rgb(159, 49, 115);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .nav_item_icon {
   font-size: 2rem;
   color: rgb(159, 49, 115);
