@@ -30,36 +30,42 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "smartphones",
+    thumbnail: "https://cdn.dummyjson.com/product-images/2/1.jpg",
     description:
       "A smartphone is a cellular telephone with an integrated computer and other features not originally associated with telephones, such as an operating system (OS), web browsing and the ability to run software applications.",
   },
   {
     _id: uuid(),
     categoryName: "laptops",
+    thumbnail: "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg",
     description:
       "Laptops are small, battery- or AC-powered personal computers (PCs) that are smaller than a briefcase.",
   },
   {
     _id: uuid(),
     categoryName: "fragrances",
+    thumbnail: "https://cdn.dummyjson.com/product-images/11/thumbnail.jpg",
     description:
       "Fragrances are substances that have strong-smelling organic compounds that have pleasant odors. They are used in many products as a perfume.",
   },
   {
     _id: uuid(),
     categoryName: "skincare",
+    thumbnail: "https://cdn.dummyjson.com/product-images/16/thumbnail.jpg",
     description:
       "Skincare is a set of practices and products that can help maintain the health of your skin, improve its appearance, and relieve skin conditions. ",
   },
   {
     _id: uuid(),
     categoryName: "groceries",
+    thumbnail: "https://cdn.dummyjson.com/product-images/22/thumbnail.jpg",
     description:
       "Groceries are food and other items purchased in a food store or supermarket",
   },
   {
     _id: uuid(),
     categoryName: "home-decoration",
+    thumbnail: "https://cdn.dummyjson.com/product-images/28/thumbnail.jpg",
     description:
       "It is clearing and creating living spaces that are visually appealing and more attractive to the human eye. Its style of furnishing and decoration",
   },
