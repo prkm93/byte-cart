@@ -19,13 +19,11 @@ const Landing = () => {
 
   return (
     <div className={styles.home_container}>
-      <div>
-        <img
-          className={styles.landing_thumbail}
-          src={electronics_img}
-          alt="electronics thumbail"
-        />
-      </div>
+      <img
+        className={styles.landing_thumbail}
+        src={electronics_img}
+        alt="electronics thumbail"
+      />
       <div className={styles.category_label}>
         <h1>What are you shopping for today?</h1>
       </div>
