@@ -18,7 +18,7 @@ const Landing = () => {
   console.log("categoryList", categoryList);
 
   return (
-    <div>
+    <div className={styles.home_container}>
       <div>
         <img
           className={styles.landing_thumbail}
