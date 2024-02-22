@@ -8,7 +8,7 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import ToastSetter from "./components/Toast";
-import Footer from "./pages/Footer";
+import Footer from "./components/Footer";
 
 function App() {
   const { isLoading } = useAuth();
