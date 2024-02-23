@@ -9,6 +9,7 @@ import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import ToastSetter from "./components/Toast";
 import Footer from "./components/Footer";
+import Product from "./pages/Product";
 
 function App() {
   const { isLoading } = useAuth();
@@ -20,6 +21,7 @@ function App() {
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/products" element={<Product />} />
       </Routes>
       <Footer />
       <ToastSetter />

@@ -39,11 +39,12 @@ const Signup = () => {
   };
 
   const handleUserDetails = (e) => {
+    const { name, value } = e.target;
     setError(false);
 
     setUserDetails({
       ...userDetails,
-      [e.target.id]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -59,6 +60,7 @@ const Signup = () => {
             className={styles.input_box}
             type="input"
             id="firstName"
+            name="firstName"
             placeholder="John"
             required
             value={userDetails.firstName}
@@ -73,6 +75,7 @@ const Signup = () => {
             className={styles.input_box}
             type="input"
             id="lastName"
+            name="lastName"
             placeholder="Doe"
             required
             value={userDetails.lastName}
@@ -87,6 +90,7 @@ const Signup = () => {
             className={styles.input_box}
             type="email"
             id="email"
+            name="email"
             required
             placeholder="john.doe@systemEnterprises.com"
             value={userDetails.email}
@@ -101,6 +105,7 @@ const Signup = () => {
             className={styles.input_box}
             type="password"
             id="password"
+            name="password"
             required
             placeholder="********"
             value={userDetails.password}
@@ -115,6 +120,7 @@ const Signup = () => {
             className={styles.input_box}
             type="password"
             id="confirm_password"
+            name="confirm_password"
             placeholder="********"
             required
             value={userDetails.confirm_password}

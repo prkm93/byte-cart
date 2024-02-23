@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { useProducts } from "../../context/ProductContext";
 import styles from "./Landing.module.css";
@@ -6,6 +7,7 @@ import electronics_img from "../../logos/electronic thumbail.png";
 
 const Landing = () => {
   const { categoryList } = useProducts();
+  const navigate = useNavigate();
   // const fetchData = async () => {
   //   try {
   //     const response = await fetch("/api/products");
@@ -32,7 +34,10 @@ const Landing = () => {
           categoryList.map((item) => {
             const { _id, categoryName, thumbnail, description } = item;
             return (
-              <div className={styles.category_card} key={_id}>
+              <div
+                className={styles.category_card}
+                key={_id}
+                onClick={() => navigate("/products")}>
                 <img
                   className={styles.card_img}
                   src={thumbnail}
