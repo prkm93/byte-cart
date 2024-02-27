@@ -1,5 +1,89 @@
-.filterSection {
-  width: 17rem;
+.filter_section {
+  width: 14rem;
   height: 100vh;
-  border-right: 3px solid black;
+  padding: 1rem;
+  border-right: 7px solid rgb(159, 49, 115, 0.1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.filter_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price_filter,
+.category_filter {
+  margin: 2rem 0;
+}
+
+.filter_label,
+.price_label,
+.category_label,
+.rating_label,
+.sort_price_label {
+  font-weight: bolder;
+}
+
+.clear_text {
+  cursor: pointer;
+}
+
+.slider {
+  margin: 0.5rem 0;
+  width: 100%;
+  outline: none;
+  height: 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  appearance: none;
+  color: rgb(159, 49, 115);
+  background-color: #ecd6e3;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgb(159, 49, 115);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.price_values {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.current_price {
+  display: block;
+  text-align: center;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+
+.checkbox {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 0.5rem;
+  accent-color: rgb(159, 49, 115);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.rating_filter {
+  margin: 2rem 0;
 }

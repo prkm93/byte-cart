@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .logo_container {
@@ -25,7 +26,7 @@
   width: 25rem;
   height: 2rem;
   border-radius: 8px;
-  border: 2px solid rgb(152, 152, 152);
+  border: 2px solid rgb(152, 152, 152, 0.3);
   padding: 0 1rem;
   background-color: rgb(243, 243, 243);
   outline: none;
