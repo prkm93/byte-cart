@@ -35,50 +35,52 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.form_container}>
-      <h2 className={styles.form_header}>Sign In</h2>
-      <form className={styles.form} onSubmit={handleLogin}>
-        <div className={styles.input_wrapper}>
-          <label className={styles.input_label} htmlFor="emailAddress">
-            Email Address
-          </label>
-          <input
-            className={styles.input_box}
-            type="email"
-            id="emailAddress"
-            required
-            value={email}
-            placeholder="john.doe@systemEnterprises.com"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className={styles.input_wrapper}>
-          <label className={styles.input_label} htmlFor="password">
-            Password
-          </label>
-          <input
-            className={styles.input_box}
-            type="password"
-            id="password"
-            required
-            value={password}
-            placeholder="********"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit" className={styles.btn_login}>
-          Login
-        </button>
-        <button
-          type="submit"
-          className={styles.btn_login}
-          onClick={fillTestCredentials}>
-          SignIn with Test Credentials
-        </button>
-        <Link className={styles.account_link} to={"/signup"}>
-          Create new Account
-        </Link>
-      </form>
+    <div className={styles.login_page}>
+      <div className={styles.form_container}>
+        <h2 className={styles.form_header}>Sign In</h2>
+        <form className={styles.form} onSubmit={handleLogin}>
+          <div className={styles.input_wrapper}>
+            <label className={styles.input_label} htmlFor="emailAddress">
+              Email Address
+            </label>
+            <input
+              className={styles.input_box}
+              type="email"
+              id="emailAddress"
+              required
+              value={email}
+              placeholder="john.doe@systemEnterprises.com"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className={styles.input_wrapper}>
+            <label className={styles.input_label} htmlFor="password">
+              Password
+            </label>
+            <input
+              className={styles.input_box}
+              type="password"
+              id="password"
+              required
+              value={password}
+              placeholder="********"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" className={styles.btn_login}>
+            Login
+          </button>
+          <button
+            type="submit"
+            className={styles.btn_login}
+            onClick={fillTestCredentials}>
+            SignIn with Test Credentials
+          </button>
+          <Link className={styles.account_link} to={"/signup"}>
+            Create new Account
+          </Link>
+        </form>
+      </div>
     </div>
   );
 };

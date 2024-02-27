@@ -2,9 +2,11 @@ import React from "react";
 import ProductFilter from "./ProductFilter";
 import ProductList from "./ProductList";
 
+import styles from "./Product.module.css";
+
 const Product = () => {
   return (
-    <div>
+    <div className={styles.product_container}>
       <ProductFilter />
       <ProductList />
     </div>

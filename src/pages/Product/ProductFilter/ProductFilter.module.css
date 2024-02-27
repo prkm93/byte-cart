@@ -1,7 +1,8 @@
 .filter_section {
-  width: 14rem;
+  width: 15vw;
   height: 100vh;
   padding: 1rem;
+  position: fixed;
   border-right: 7px solid rgb(159, 49, 115, 0.1);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

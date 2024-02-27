@@ -1,14 +1,15 @@
 .header_container {
   background-color: #fcf7fa;
-  height: 4.3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 8999;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .logo_container {
-  margin: 1rem;
   cursor: pointer;
 }
 

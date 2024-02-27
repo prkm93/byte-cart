@@ -10,16 +10,6 @@ const Landing = () => {
   const navigate = useNavigate();
 
   const { categoryList } = productState;
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch("/api/products");
-  //     console.log("response. data", await response.json());
-  //   } catch (err) {
-  //     console.error(err.response);
-  //   }
-  // };
-
-  console.log("categoryList", productState);
 
   return (
     <div className={styles.home_container}>

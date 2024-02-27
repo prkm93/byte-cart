@@ -12,7 +12,6 @@ import Signup from "./pages/Auth/Signup";
 import ToastSetter from "./components/Toast";
 import Footer from "./components/Footer";
 import Product from "./pages/Product";
-import "./App.css";
 
 function App() {
   const { isLoading } = useAuth();
@@ -21,7 +20,7 @@ function App() {
   } = useProducts();
 
   return (
-    <div className="App">
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />

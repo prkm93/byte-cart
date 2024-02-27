@@ -1,5 +1,10 @@
+.signup_page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .form_container {
-  margin: 6rem auto;
   width: 23rem;
   height: auto;
   padding: 0.1rem 1rem;

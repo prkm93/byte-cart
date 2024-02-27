@@ -13,8 +13,8 @@ export const initialProductState = {
   sortByPrice: "",
 };
 
-export const productReducer = (state = initialProductState, actions) => {
-  const { type, payload } = actions;
+export const productReducer = (state = initialProductState, action) => {
+  const { type, payload } = action;
   switch (type) {
     case FETCH_PRODUCTS:
       return {
