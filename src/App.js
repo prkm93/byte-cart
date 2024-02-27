@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import Mockman from "mockman-js";
-import Loader from "./components/Loader";
+
 import { useAuth } from "./context/AuthContext";
-import "./App.css";
+import { useProducts } from "./context/ProductContext";
+
+import Loader from "./components/Loader";
 import Header from "./components/Header";
 import Landing from "./pages/Landing";
 import Login from "./pages/Auth/Login";
@@ -10,9 +12,14 @@ import Signup from "./pages/Auth/Signup";
 import ToastSetter from "./components/Toast";
 import Footer from "./components/Footer";
 import Product from "./pages/Product";
+import "./App.css";
 
 function App() {
   const { isLoading } = useAuth();
+  const {
+    productState: { isLoadingItems },
+  } = useProducts();
+
   return (
     <div className="App">
       <Header />
@@ -25,7 +32,7 @@ function App() {
       </Routes>
       <Footer />
       <ToastSetter />
-      {isLoading && (
+      {(isLoading || isLoadingItems) && (
         <div>
           <Loader />
         </div>

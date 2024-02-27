@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./ProductFilter.module.css";
 
 const ProductFilter = () => {
+  const Ratings = [4, 3, 2, 1];
   const [price, setPrice] = useState(100);
 
   return (

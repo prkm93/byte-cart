@@ -1,0 +1,5 @@
+export const productActionTypes = {
+  IS_LOADING: "IS_LOADING",
+  FETCH_PRODUCTS: "FETCH_PRODUCTS",
+  FETCH_CATEGORIES: "FETCH_CATEGORIES",
+};

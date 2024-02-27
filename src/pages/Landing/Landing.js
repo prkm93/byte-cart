@@ -6,8 +6,10 @@ import styles from "./Landing.module.css";
 import electronics_img from "../../logos/electronic thumbail.png";
 
 const Landing = () => {
-  const { categoryList } = useProducts();
+  const { productState } = useProducts();
   const navigate = useNavigate();
+
+  const { categoryList } = productState;
   // const fetchData = async () => {
   //   try {
   //     const response = await fetch("/api/products");
@@ -17,7 +19,7 @@ const Landing = () => {
   //   }
   // };
 
-  console.log("categoryList", categoryList);
+  console.log("categoryList", productState);
 
   return (
     <div className={styles.home_container}>
