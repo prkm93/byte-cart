@@ -14,19 +14,19 @@ const ProductCard = (product) => {
     description,
     stock,
     discountPercentage,
-  } = product;
-  console.log("product", product);
-  const originalPrice = Math.floor(price + (price * discountPercentage) / 100);
+  } = product.product;
+  console.log("product", product.product);
+  //   const originalPrice = Math.floor(price + (price * discountPercentage) / 100);
 
   return (
     <div className={styles.product_card}>
       <div>
-        <img src={thumbnail} alt={title} />
+        <img className={styles.product_img} src={thumbnail} alt={title} />
       </div>
       <div>{title}</div>
       <div>
         <div>{price}</div>
-        <div>{originalPrice}</div>
+        {/* <div>{originalPrice}</div> */}
       </div>
     </div>
   );

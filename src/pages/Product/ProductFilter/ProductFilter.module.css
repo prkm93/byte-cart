@@ -1,5 +1,7 @@
 .filter_section {
   width: 15vw;
+  min-width: 15vw;
+  margin-top: 4.5rem;
   height: 100vh;
   padding: 1rem;
   position: fixed;
