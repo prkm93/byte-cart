@@ -93,7 +93,7 @@ const Signup = () => {
               id="email"
               name="email"
               required
-              placeholder="john.doe@systemEnterprises.com"
+              placeholder="john.doe@gmail.com"
               value={userDetails.email}
               onChange={handleUserDetails}
             />
