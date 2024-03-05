@@ -1,10 +1,63 @@
 .product_card {
   width: 20rem;
-  height: 15rem;
-  border: 1px solid black;
+  font-size: 0.9rem;
+  height: auto;
+  border: 1px solid rgb(152, 152, 152, 0.3);
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .product_img {
   width: 100%;
-  height: 15rem;
+  height: 13rem;
+}
+
+.card_title {
+  margin-left: 0.5rem;
+}
+
+.card_price_details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.wishlist_icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5rem;
+  background-color: #e5d4de;
+  padding: 0.3rem;
+  color: #4c1737;
+  border-bottom-left-radius: 7px;
+}
+
+.cart_btn {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid rgb(152, 152, 152, 0.3);
+  outline: none;
+  background-color: #e359ac;
+  color: #fff;
+  font-size: 1.08rem;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.cart_btn:hover {
+  background-color: #a43176;
+  color: #fff;
+  cursor: pointer;
 }
