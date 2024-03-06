@@ -58,6 +58,10 @@
   cursor: pointer;
 }
 
+.price_value {
+  color: rgb(108, 106, 107, 0.9);
+}
+
 .price_values {
   margin-top: 0.5rem;
   font-size: 0.9rem;
@@ -70,6 +74,7 @@
   text-align: center;
   margin-right: 1rem;
   font-size: 0.9rem;
+  color: rgb(108, 106, 107, 0.9);
 }
 
 .checkbox {

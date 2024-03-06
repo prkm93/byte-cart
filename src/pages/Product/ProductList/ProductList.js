@@ -9,7 +9,6 @@ const ProductList = () => {
     productState: { productList },
   } = useProducts();
 
-  console.log("productList", productList);
   return (
     <div className={styles.productList}>
       {productList &&

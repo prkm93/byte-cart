@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
           );
           setToken(encodedToken);
           setUserDetails(foundUser);
-          toast.success("User logged in successfully");
+          toast.success(`Hi 👋, Welcome back ${foundUser.firstName}`);
           navigate("/");
         }
         setIsLoading(false);

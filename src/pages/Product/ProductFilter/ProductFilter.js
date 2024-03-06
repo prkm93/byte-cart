@@ -1,9 +1,25 @@
 import React, { useState } from "react";
+import { useProducts } from "../../../context/ProductContext";
+import { discountedPrice } from "../../../utils/utils";
 import styles from "./ProductFilter.module.css";
 
 const ProductFilter = () => {
+  const {
+    productState: { productList, categoryList },
+  } = useProducts();
+
+  const prices = productList
+    .map((product) =>
+      discountedPrice(product.price, product.discountPercentage)
+    )
+    .sort((a, b) => b - a);
+  const maxPrice = prices[0];
+  const midPrice = Math.floor(maxPrice / 2);
+
+  const categories = categoryList.map(({ categoryName }) => categoryName);
   const Ratings = [4, 3, 2, 1];
-  const [price, setPrice] = useState(100);
+
+  const [price, setPrice] = useState(midPrice);
 
   return (
     <div className={styles.filter_section}>
@@ -17,16 +33,16 @@ const ProductFilter = () => {
         </label>
         <br />
         <div className={styles.price_values}>
-          <label>0</label>
-          <label>100</label>
-          <label>200</label>
+          <label className={styles.price_value}>0</label>
+          <label className={styles.price_value}>{midPrice}</label>
+          <label className={styles.price_value}>{maxPrice}</label>
         </div>
         <input
           type="range"
           className={styles.slider}
           id="price_range"
-          min="1"
-          max="200"
+          min={0}
+          max={maxPrice}
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
@@ -36,28 +52,32 @@ const ProductFilter = () => {
         <label htmlFor="categories" className={styles.category_label}>
           Categories
         </label>
-        <div className={styles.checkbox}>
-          <input type="checkbox" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">SmartPhone</label>
-        </div>
-        <div className={styles.checkbox}>
-          <input type="checkbox" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">SmartPhone</label>
-        </div>
-        <div className={styles.checkbox}>
-          <input type="checkbox" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">SmartPhone</label>
-        </div>
-        <div className={styles.checkbox}>
-          <input type="checkbox" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">SmartPhone</label>
-        </div>
+        {categories.map((item) => {
+          return (
+            <div className={styles.checkbox}>
+              <input type="checkbox" name={item} id={`${item}-checkbox`} />
+              <label htmlFor={`${item}-checkbox`}>{item}</label>
+            </div>
+          );
+        })}
       </div>
       <div className={styles.rating_filter}>
         <label htmlFor="rating" className={styles.rating_label}>
           Rating
         </label>
-        <div className={styles.checkbox}>
+        {Ratings.map((rating) => {
+          return (
+            <div className={styles.checkbox}>
+              <input
+                type="radio"
+                name={`${rating}-star`}
+                id={`${rating}-star`}
+              />
+              <label htmlFor={`${rating}-star`}>{rating} star & above</label>
+            </div>
+          );
+        })}
+        {/* <div className={styles.checkbox}>
           <input type="radio" name="smartphone" id="smartphone" />
           <label htmlFor="smartphone">4 star & above</label>
         </div>
@@ -72,7 +92,7 @@ const ProductFilter = () => {
         <div className={styles.checkbox}>
           <input type="radio" name="smartphone" id="smartphone" />
           <label htmlFor="smartphone">1 star & above</label>
-        </div>
+        </div> */}
       </div>
       <div className={styles.sort_filter}>
         <label htmlFor="sort_price" className={styles.sort_price_label}>
