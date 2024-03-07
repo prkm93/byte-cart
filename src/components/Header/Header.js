@@ -6,11 +6,15 @@ import { IoCartOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 
 import { useAuth } from "../../context/AuthContext";
+import { useProducts } from "../../context/ProductContext";
+import { filterTypes } from "../../utils/constant";
 import apparel_logo from "../../logos/apparel-icon.jpg";
 import styles from "./Header.module.css";
 
 const Header = () => {
   const { token, onLogoutHandler } = useAuth();
+  const { productDispatch } = useProducts();
+  const { SEARCH_PRODUCT } = filterTypes;
   const navigate = useNavigate();
 
   return (
@@ -23,7 +27,17 @@ const Header = () => {
         />{" "}
       </div>
       <div>
-        <input className={styles.search_box} type="text" placeholder="search" />
+        <input
+          className={styles.search_box}
+          type="text"
+          placeholder="search"
+          onChange={(e) =>
+            productDispatch({
+              type: SEARCH_PRODUCT,
+              payload: e.target.value,
+            })
+          }
+        />
         <CiSearch className={styles.search_icon} />
       </div>
       <div>
@@ -45,7 +59,12 @@ const Header = () => {
             )}
           </li>
           <li className={styles.nav_item}>
-            <CiHeart className={styles.nav_item_icon} />
+            <CiHeart
+              className={styles.nav_item_icon}
+              onClick={() =>
+                token ? navigate("/wishlist") : navigate("/login")
+              }
+            />
           </li>
           <li className={styles.nav_item}>
             <IoCartOutline className={styles.nav_item_icon} />

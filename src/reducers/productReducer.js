@@ -1,10 +1,13 @@
-import { productActionTypes } from "../utils/constant";
+import { productActionTypes, filterTypes } from "../utils/constant";
 
-const { FETCH_CATEGORIES, FETCH_PRODUCTS, IS_LOADING } = productActionTypes;
+const { FETCH_CATEGORIES, FETCH_PRODUCTS, IS_LOADING, GET_PRODUCT_DETAILS } =
+  productActionTypes;
+const { SEARCH_PRODUCT } = filterTypes;
 
 export const initialProductState = {
   productList: [],
   categoryList: [],
+  productDetail: {},
   isLoadingItems: false,
   searchProduct: "",
   priceRangeInput: "",
@@ -30,6 +33,16 @@ export const productReducer = (state = initialProductState, action) => {
       return {
         ...state,
         isLoadingItems: payload,
+      };
+    case GET_PRODUCT_DETAILS:
+      return {
+        ...state,
+        productDetail: payload,
+      };
+    case SEARCH_PRODUCT:
+      return {
+        ...state,
+        searchProduct: payload,
       };
     default:
       return state;

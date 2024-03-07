@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useProducts } from "../../../context/ProductContext";
-import { discountedPrice } from "../../../utils/utils";
+import { discountedPrice, capitalise1stChar } from "../../../utils/utils";
 import styles from "./ProductFilter.module.css";
 
 const ProductFilter = () => {
@@ -54,9 +54,15 @@ const ProductFilter = () => {
         </label>
         {categories.map((item) => {
           return (
-            <div className={styles.checkbox}>
-              <input type="checkbox" name={item} id={`${item}-checkbox`} />
-              <label htmlFor={`${item}-checkbox`}>{item}</label>
+            <div className={styles.checkbox} key={`${item}-checkbox`}>
+              <input
+                type="checkbox"
+                name={`${item}-checkbox`}
+                id={`${item}-checkbox`}
+              />
+              <label htmlFor={`${item}-checkbox`}>
+                {capitalise1stChar(item)}
+              </label>
             </div>
           );
         })}
@@ -67,44 +73,24 @@ const ProductFilter = () => {
         </label>
         {Ratings.map((rating) => {
           return (
-            <div className={styles.checkbox}>
-              <input
-                type="radio"
-                name={`${rating}-star`}
-                id={`${rating}-star`}
-              />
+            <div className={styles.checkbox} key={`${rating}-star`}>
+              <input type="radio" name="rating" id={`${rating}-star`} />
               <label htmlFor={`${rating}-star`}>{rating} star & above</label>
             </div>
           );
         })}
-        {/* <div className={styles.checkbox}>
-          <input type="radio" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">4 star & above</label>
-        </div>
-        <div className={styles.checkbox}>
-          <input type="radio" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">3 star & above</label>
-        </div>
-        <div className={styles.checkbox}>
-          <input type="radio" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">2 star & above</label>
-        </div>
-        <div className={styles.checkbox}>
-          <input type="radio" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">1 star & above</label>
-        </div> */}
       </div>
       <div className={styles.sort_filter}>
         <label htmlFor="sort_price" className={styles.sort_price_label}>
           Sort by Price
         </label>
         <div className={styles.checkbox}>
-          <input type="radio" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">Price - High to low</label>
+          <input type="radio" name="sort" id="sortHighToLow" />
+          <label htmlFor="sortHighToLow">Price - High to low</label>
         </div>
         <div className={styles.checkbox}>
-          <input type="radio" name="smartphone" id="smartphone" />
-          <label htmlFor="smartphone">Price - Low to high</label>
+          <input type="radio" name="sort" id="sortLowToHigh" />
+          <label htmlFor="sortLowToHigh">Price - Low to high</label>
         </div>
       </div>
     </div>

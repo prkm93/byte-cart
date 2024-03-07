@@ -4,11 +4,22 @@ import {
   initialProductState,
   productReducer,
 } from "../reducers/productReducer";
-import { productActionTypes } from "../utils/constant";
+import { productActionTypes, filterTypes } from "../utils/constant";
 import { categoryListService } from "../services/category/categoryService";
-import { productService } from "../services/product/productService";
+import {
+  productService,
+  productDetailService,
+} from "../services/product/productService";
 
 const { FETCH_CATEGORIES, FETCH_PRODUCTS, IS_LOADING } = productActionTypes;
+const {
+  SEARCH_PRODUCT,
+  FILTER_BY_PRICE,
+  FILTER_BY_CATEGORY,
+  FILTER_BY_RATING,
+  SORT,
+  CLEAR_FILTER,
+} = filterTypes;
 
 const ProductContext = createContext(null);
 
@@ -59,9 +70,28 @@ const ProductProvider = ({ children }) => {
         });
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
     handleLoader(false);
+  };
+
+  const getProductDetails = async (id) => {
+    handleLoader(true);
+    try {
+      const response = await productDetailService(id);
+      console.log("response details", response.data);
+    } catch (err) {
+      console.error(err);
+    }
+    handleLoader(false);
+  };
+
+  const searchProductHandler = (event) => {
+    console.log(event.target.value);
+    productDispatch({
+      type: SEARCH_PRODUCT,
+      payload: event.target.value,
+    });
   };
 
   useEffect(() => {
@@ -70,7 +100,13 @@ const ProductProvider = ({ children }) => {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ productState, productDispatch }}>
+    <ProductContext.Provider
+      value={{
+        productState,
+        productDispatch,
+        searchProductHandler,
+        getProductDetails,
+      }}>
       {children}
     </ProductContext.Provider>
   );

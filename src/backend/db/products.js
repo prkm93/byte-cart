@@ -7,6 +7,7 @@
 
 export const products = [
   {
+    _id: "be51624b-c4a5-44f2-9c16-69b284e5fd5c",
     brand: "Apple",
     category: "smartphones",
     description: "An apple mobile which is nothing like apple",
@@ -26,6 +27,7 @@ export const products = [
     title: "iPhone 9",
   },
   {
+    _id: "7116b8e1-5b68-4b8f-a616-425762e9238zsd",
     brand: "Apple",
     category: "smartphones",
     description:
@@ -45,6 +47,7 @@ export const products = [
     title: "iPhone X",
   },
   {
+    _id: "4b56b4ef-c361-4c72-b39e-97dee6711bb9",
     brand: "Samsung",
     category: "smartphones",
     description:
@@ -59,6 +62,7 @@ export const products = [
     title: "Samsung Universe 9",
   },
   {
+    _id: "1f302642-447a-4694-bb27-9703d6524aa4",
     brand: "OPPO",
     category: "smartphones",
     description: "OPPO F19 is officially announced on April 2021.",
@@ -78,6 +82,7 @@ export const products = [
     title: "OPPOF19",
   },
   {
+    _id: "556603b0-2c56-4462-848e-448dfc69bc3d",
     brand: "Huawei",
     category: "smartphones",
     description:
@@ -96,6 +101,7 @@ export const products = [
     title: "Huawei P30",
   },
   {
+    _id: "7116b8e1-5b68-4b8f-a616-42asa110762e91121zad",
     brand: "Apple",
     category: "laptops",
     description:
@@ -115,6 +121,7 @@ export const products = [
     title: "MacBook Pro",
   },
   {
+    _id: "ff06eaed-9a9c-4f42-a525-e233baaaa294",
     brand: "Samsung",
     category: "laptops",
     description:
@@ -134,6 +141,7 @@ export const products = [
     title: "Samsung Galaxy Book",
   },
   {
+    _id: "7ef09383-3ef3-4eeb-ba05-23b2aa4d0553",
     brand: "Microsoft Surface",
     category: "laptops",
     description:
@@ -154,6 +162,7 @@ export const products = [
     title: "Microsoft Surface Laptop 4",
   },
   {
+    _id: "c1dd7db4-0830-4e01-a968-bdbcce36d4de",
     brand: "Infinix",
     category: "laptops",
     description:
@@ -174,6 +183,7 @@ export const products = [
     title: "Infinix INBOOK",
   },
   {
+    _id: "7116b8e1-5b68-4b8f-a616-431232fjf762e97d7d",
     brand: "HP Pavilion",
     category: "laptops",
     description:
@@ -193,6 +203,7 @@ export const products = [
     title: "HP Pavilion 15-DK1056WM",
   },
   {
+    _id: "75e79f27-b6fa-4f10-8829-b4d003e77b43",
     brand: "Impression of Acqua Di Gio",
     category: "fragrances",
     description:
@@ -212,6 +223,7 @@ export const products = [
     title: "perfume Oil",
   },
   {
+    _id: "1bb27d9f-1720-449e-ada1-7fad574344d7",
     brand: "Royal_Mirage",
     category: "fragrances",
     description: "Royal_Mirage Sport Brown Perfume for Men &amp; Women - 120ml",
@@ -231,6 +243,7 @@ export const products = [
     title: "Brown Perfume",
   },
   {
+    _id: "4694797c-e044-4464-97f0-102c18a48142",
     brand: "Fog Scent Xpressio",
     category: "fragrances",
     description:
@@ -251,6 +264,7 @@ export const products = [
     title: "Fog Scent Xpressio Perfume",
   },
   {
+    _id: "f17f6d0b-3bf0-4dbd-ad8b-24801572c7a0",
     brand: "Al Munakh",
     category: "fragrances",
     description:
@@ -270,6 +284,7 @@ export const products = [
     title: "Non-Alcoholic Concentrated Perfume Oil",
   },
   {
+    _id: "c1dd7db4-0830-4e01-a968-bdbccasa12d4de",
     brand: "Lord - Al-Rehab",
     category: "fragrances",
     description:
@@ -290,6 +305,7 @@ export const products = [
     title: "Eau De Perfume Spray",
   },
   {
+    _id: "1a11dd3c-a8a8-4d66-acff-9c5015673c2b",
     brand: "L'Oreal Paris",
     category: "skincare",
     description:
@@ -310,6 +326,7 @@ export const products = [
     title: "Hyaluronic Acid Serum",
   },
   {
+    _id: "8e7d52e2-75e7-489c-9e43-74875ebbc187",
     brand: "Hemani Tea",
     category: "skincare",
     description:
@@ -329,6 +346,7 @@ export const products = [
     title: "Tree Oil 30ml",
   },
   {
+    _id: "7116b8e1-5b68-4b8f-a616-4257dfdjfo997d7d",
     brand: "Dermive",
     category: "skincare",
     description:
@@ -349,6 +367,7 @@ export const products = [
     title: "Oil Free Moisturizer 100ml",
   },
   {
+    _id: "d2fc9ea9-a7ad-4b5d-94ea-69a806aa734e",
     brand: "ROREC White Rice",
     category: "skincare",
     description:
@@ -368,6 +387,7 @@ export const products = [
     title: "Skin Beauty Serum.",
   },
   {
+    _id: "c1dd7db4-0830-4e01-a968-bdbcsdfsd35657d4de",
     brand: "Fair &amp; Clear",
     category: "skincare",
     description:
@@ -388,6 +408,7 @@ export const products = [
     title: "Freckle Treatment Cream- 15gm",
   },
   {
+    _id: "a26b3142-af90-4b65-a4dc-2a145b921d3e",
     brand: "Saaf &amp; Khaas",
     category: "groceries",
     description: "Fine quality Branded Product Keep in a cool and dry place",
@@ -405,6 +426,7 @@ export const products = [
     title: "- Daal Masoor 500 grams",
   },
   {
+    _id: "5391f145-f5b5-4ec3-93d3-e15ee2e3e115",
     brand: "Bake Parlor Big",
     category: "groceries",
     description: "Product details of Bake Parlor Big Elbow Macaroni - 400 gm",
@@ -422,6 +444,7 @@ export const products = [
     title: "Elbow Macaroni - 400 gm",
   },
   {
+    _id: "7116b8e1-5213sf-4458f-a616-4257dfdjf2397d7d",
     brand: "Baking Food Items",
     category: "groceries",
     description:
@@ -442,6 +465,7 @@ export const products = [
     title: "Orange Essence Food Flavou",
   },
   {
+    _id: "76a8c6ea-9bcb-463b-93b8-e5cc65e6c668",
     brand: "fauji",
     category: "groceries",
     description:
@@ -462,6 +486,7 @@ export const products = [
     title: "cereals muesli fruit nuts",
   },
   {
+    _id: "c1dd7db4-0830-4e01-232a58a-bdbcsdfsd35657d4de",
     brand: "Dry Rose",
     category: "groceries",
     description: "Dry Rose Flower Powder Gulab Powder 50 Gram • Treats Wounds",
@@ -481,6 +506,7 @@ export const products = [
     title: "Gulab Powder 50 Gram",
   },
   {
+    _id: "81d1fb3a-8052-4e6b-b4c6-4070302f04bd",
     brand: "Boho Decor",
     category: "home-decoration",
     description:
@@ -502,6 +528,7 @@ export const products = [
     title: "Plant Hanger For Home",
   },
   {
+    _id: "a014a62a-ffb2-4507-a6a4-5a6848729b53",
     brand: "Flying Wooden",
     category: "home-decoration",
     description:
@@ -522,6 +549,7 @@ export const products = [
     title: "Flying Wooden Bird",
   },
   {
+    _id: "7116b8e1-5b68-4b8f-a616-425762e97d7d",
     brand: "LED Lights",
     category: "home-decoration",
     description:
@@ -542,6 +570,7 @@ export const products = [
     title: "3D Embellishment Art Lamp",
   },
   {
+    _id: "2cc7f69b-f49b-4008-bb7b-8be37e160657",
     brand: "luxury palace",
     category: "home-decoration",
     description:
@@ -562,6 +591,7 @@ export const products = [
     title: "Handcraft Chinese style",
   },
   {
+    _id: "2cc7f69b-f49b-4008-bb8b-8be37e160690",
     brand: "Golden",
     category: "home-decoration",
     description:

@@ -7,7 +7,6 @@
   cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   transition: all 4000ms ease;
@@ -58,7 +57,26 @@
 }
 
 .wishlist_icon:hover {
-  color: rgb(231, 14, 14);
+  color: rgb(244, 37, 117);
+}
+
+.star_icon {
+  position: absolute;
+  padding: 0.3rem;
+  top: 11.4rem;
+  font-size: 1rem;
+  background-color: #e5d4de;
+  color: rgb(76, 23, 55, 0.5);
+}
+
+.rating {
+  position: absolute;
+  padding: 0.3rem;
+  left: 1.4rem;
+  top: 11.4rem;
+  font-size: 0.9rem;
+  border-top-right-radius: 5px;
+  background-color: #e5d4de;
 }
 
 .card_original_price {
