@@ -1,0 +1,25 @@
+.product_detail_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(128, 128, 128, 0.2); */
+}
+
+.product_detail_card {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product_detail_img {
+  width: 20rem;
+}
+
+.product_detail_info {
+  background-color: red;
+}
+.product_price_details {
+  display: flex;
+  justify-content: space-around;
+}

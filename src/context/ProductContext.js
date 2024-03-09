@@ -11,7 +11,8 @@ import {
   productDetailService,
 } from "../services/product/productService";
 
-const { FETCH_CATEGORIES, FETCH_PRODUCTS, IS_LOADING } = productActionTypes;
+const { FETCH_CATEGORIES, FETCH_PRODUCTS, IS_LOADING, GET_PRODUCT_DETAILS } =
+  productActionTypes;
 const {
   SEARCH_PRODUCT,
   FILTER_BY_PRICE,
@@ -78,8 +79,16 @@ const ProductProvider = ({ children }) => {
   const getProductDetails = async (id) => {
     handleLoader(true);
     try {
-      const response = await productDetailService(id);
-      console.log("response details", response.data);
+      const {
+        status,
+        data: { product },
+      } = await productDetailService(id);
+      if (status === 200) {
+        productDispatch({
+          type: GET_PRODUCT_DETAILS,
+          payload: product,
+        });
+      }
     } catch (err) {
       console.error(err);
     }

@@ -10,19 +10,8 @@ import styles from "./ProductCard.module.css";
 const ProductCard = (product) => {
   const navigate = useNavigate();
   const { getProductDetails } = useProducts();
-  const {
-    _id,
-    images,
-    price,
-    rating,
-    thumbnail,
-    category,
-    title,
-    brand,
-    description,
-    stock,
-    discountPercentage,
-  } = product.product;
+  const { _id, price, rating, thumbnail, title, discountPercentage } =
+    product.product;
 
   return (
     <div
