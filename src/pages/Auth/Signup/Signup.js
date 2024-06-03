@@ -137,7 +137,7 @@ const Signup = () => {
             Create new account
           </button>
           <Link className={styles.account_link} to={"/login"}>
-            Already have an account
+            Already have an account?
           </Link>
         </form>
       </div>

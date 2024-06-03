@@ -33,7 +33,7 @@ const ProductCard = (product) => {
         <div className={styles.card_prices}>
           <div>
             {currencyFormatter.format(
-              discountedPrice(price, discountPercentage)
+              discountedPrice(price, Math.floor(discountPercentage))
             )}
           </div>
           <div className={styles.card_original_price}>

@@ -4,22 +4,105 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: rgb(128, 128, 128, 0.2); */
 }
 
 .product_detail_card {
   display: flex;
-  justify-content: space-around;
+  height: auto;
+  width: 50vw;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.product_detail_img_box {
+  width: 35vw;
+  height: 30vh;
+  border: 15px solid #e5d4de;
+  border-radius: 10px;
 }
 
 .product_detail_img {
-  width: 20rem;
+  width: 100%;
+  height: 100%;
 }
 
 .product_detail_info {
-  background-color: red;
+  /* background-color: #e5d4de; */
+  width: 35vw;
+  height: 30vh;
+  padding: 0 1rem;
+  border-radius: 10px;
 }
+
+.product_detail_rating {
+  margin: 1rem 0;
+  display: flex;
+}
+
+.product_rating_icon {
+  margin-left: 0.4rem;
+}
+
 .product_price_details {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.product_detail_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.product_price_discounted {
+  font-weight: bold;
+}
+
+.product_price_original {
+  color: rgb(128, 128, 128, 0.8);
+  font-weight: 400;
+  text-decoration: line-through;
+  padding-right: 6rem;
+}
+
+.product_discount {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.product_divider {
+  margin: 1rem 0;
+}
+
+.product_detail_label {
+  font-weight: bold;
+}
+
+.product_add_cart_btn {
+  width: 100%;
+}
+
+.product_more_detail {
+  margin: 1rem 0;
+}
+
+.product_add_cart_btn {
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  border: 1px solid rgb(152, 152, 152, 0.3);
+  outline: none;
+  background-color: #e359ac;
+  color: #fff;
+  font-size: 1.08rem;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.product_add_cart_btn:hover {
+  background-color: #a43176;
+  color: #fff;
+  cursor: pointer;
 }

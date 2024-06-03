@@ -462,7 +462,7 @@ export const products = [
     rating: 4.85,
     stock: 26,
     thumbnail: "https://cdn.dummyjson.com/product-images/23/thumbnail.jpg",
-    title: "Orange Essence Food Flavou",
+    title: "Orange Essence Food Flavour",
   },
   {
     _id: "76a8c6ea-9bcb-463b-93b8-e5cc65e6c668",
