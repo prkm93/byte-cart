@@ -46,8 +46,8 @@ const ProductFilter = () => {
             productDispatch({
               type: CLEAR_FILTER,
               payload: {
-                productList: productList,
-                categoryList: categoryList,
+                productList,
+                categoryList,
               },
             })
           }>

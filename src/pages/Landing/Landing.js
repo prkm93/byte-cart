@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useProducts } from "../../context/ProductContext";
+import { filterTypes } from "../../utils/constant";
 import styles from "./Landing.module.css";
 import electronics_img from "../../logos/electronic thumbail.png";
 
 const Landing = () => {
   const {
-    productState: { categoryList },
+    productState: { productList, categoryList },
+    productDispatch,
   } = useProducts();
+
   const navigate = useNavigate();
+
+  const { FILTER_BY_CATEGORY, CLEAR_FILTER } = filterTypes;
+
+  useEffect(() => {
+    productDispatch({
+      type: CLEAR_FILTER,
+      payload: {
+        categoryList,
+        productList,
+      },
+    });
+  }, []);
 
   return (
     <div className={styles.home_container}>
@@ -29,7 +44,13 @@ const Landing = () => {
               <div
                 className={styles.category_card}
                 key={_id}
-                onClick={() => navigate("/products")}>
+                onClick={() => {
+                  productDispatch({
+                    type: FILTER_BY_CATEGORY,
+                    payload: categoryName,
+                  });
+                  navigate("/products");
+                }}>
                 <img
                   className={styles.card_img}
                   src={thumbnail}

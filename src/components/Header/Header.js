@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <div className={styles.header_container}>
-      <div className={styles.logo_container} onClick={() => navigate("/")}>
+      <div className={styles.logo_container} onClick={() => navigate("/home")}>
         <img
           className={styles.cloth_logo}
           src={apparel_logo}
