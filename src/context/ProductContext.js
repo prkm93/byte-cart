@@ -25,7 +25,6 @@ const ProductProvider = ({ children }) => {
 
   const {
     productList,
-    categoryList,
     searchProduct,
     categoryInput,
     priceRangeInput,
@@ -140,6 +139,7 @@ const ProductProvider = ({ children }) => {
   useEffect(() => {
     fetchCategory();
     fetchProductList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

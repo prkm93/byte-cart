@@ -6,10 +6,10 @@ import styles from "./Landing.module.css";
 import electronics_img from "../../logos/electronic thumbail.png";
 
 const Landing = () => {
-  const { productState } = useProducts();
+  const {
+    productState: { categoryList },
+  } = useProducts();
   const navigate = useNavigate();
-
-  const { categoryList } = productState;
 
   return (
     <div className={styles.home_container}>
