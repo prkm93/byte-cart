@@ -13,7 +13,10 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   const { token, onLogoutHandler } = useAuth();
-  const { productDispatch } = useProducts();
+  const {
+    productState: { searchProduct },
+    productDispatch,
+  } = useProducts();
   const { SEARCH_PRODUCT } = filterTypes;
   const navigate = useNavigate();
 
@@ -31,6 +34,7 @@ const Header = () => {
           className={styles.search_box}
           type="text"
           placeholder="search"
+          value={searchProduct}
           onChange={(e) =>
             productDispatch({
               type: SEARCH_PRODUCT,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useProducts } from "../../../context/ProductContext";
 import { discountedPrice, capitalise1stChar } from "../../../utils/utils";
 import { filterTypes } from "../../../utils/constant";
@@ -17,6 +17,7 @@ const ProductFilter = () => {
     productDispatch,
   } = useProducts();
   const {
+    SET_MAX_PRICE,
     FILTER_BY_PRICE,
     FILTER_BY_CATEGORY,
     FILTER_BY_RATING,
@@ -35,6 +36,14 @@ const ProductFilter = () => {
   const categories = categoryList.map(({ categoryName }) => categoryName);
   const Ratings = [4, 3, 2, 1];
   console.log(useProducts().productState);
+
+  useEffect(() => {
+    productDispatch({
+      type: SET_MAX_PRICE,
+      payload: maxPrice,
+    });
+  }, []);
+
   return (
     <div className={styles.filter_section}>
       <div className={styles.filter_header}>

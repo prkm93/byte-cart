@@ -4,23 +4,16 @@ import {
   initialProductState,
   productReducer,
 } from "../reducers/productReducer";
-import { productActionTypes, filterTypes } from "../utils/constant";
+import { productActionTypes } from "../utils/constant";
 import { categoryListService } from "../services/category/categoryService";
 import {
   productService,
   productDetailService,
 } from "../services/product/productService";
+import { discountedPrice, convertRatingToWholeNumber } from "../utils/utils";
 
 const { FETCH_CATEGORIES, FETCH_PRODUCTS, IS_LOADING, GET_PRODUCT_DETAILS } =
   productActionTypes;
-const {
-  SEARCH_PRODUCT,
-  FILTER_BY_PRICE,
-  FILTER_BY_CATEGORY,
-  FILTER_BY_RATING,
-  SORT,
-  CLEAR_FILTER,
-} = filterTypes;
 
 const ProductContext = createContext(null);
 
@@ -29,6 +22,16 @@ const ProductProvider = ({ children }) => {
     productReducer,
     initialProductState
   );
+
+  const {
+    productList,
+    categoryList,
+    searchProduct,
+    categoryInput,
+    priceRangeInput,
+    ratingInput,
+    sortByPrice,
+  } = productState;
 
   const handleLoader = (boolVal) => {
     productDispatch({
@@ -95,13 +98,44 @@ const ProductProvider = ({ children }) => {
     handleLoader(false);
   };
 
-  const searchProductHandler = (event) => {
-    console.log(event.target.value);
-    productDispatch({
-      type: SEARCH_PRODUCT,
-      payload: event.target.value,
-    });
-  };
+  const filterBySearch = searchProduct
+    ? productList.filter((item) =>
+        item.title.toLowerCase().includes(searchProduct.toLowerCase())
+      )
+    : productList;
+
+  const filterByCategory =
+    categoryInput.length > 0
+      ? filterBySearch.filter(({ category }) =>
+          categoryInput.includes(category.toLowerCase())
+        )
+      : filterBySearch;
+
+  const filterByRating =
+    ratingInput > 0
+      ? filterByCategory.filter(
+          ({ rating }) =>
+            Number(convertRatingToWholeNumber(rating)) >= Number(ratingInput)
+        )
+      : filterByCategory;
+
+  console.log("filterByRating ===>", filterByRating);
+
+  const sortingByPrice =
+    sortByPrice.length > 0
+      ? sortByPrice === "sortHighToLow"
+        ? filterByRating.sort((a, b) => b.price - a.price)
+        : filterByRating.sort((a, b) => a.price - b.price)
+      : filterByRating;
+
+  const filterByPrice =
+    priceRangeInput > 0
+      ? sortingByPrice.filter(
+          ({ price, discountPercentage }) =>
+            discountedPrice(price, discountPercentage) <=
+            Number(priceRangeInput)
+        )
+      : sortByPrice;
 
   useEffect(() => {
     fetchCategory();
@@ -113,8 +147,8 @@ const ProductProvider = ({ children }) => {
       value={{
         productState,
         productDispatch,
-        searchProductHandler,
         getProductDetails,
+        filterByPrice,
       }}>
       {children}
     </ProductContext.Provider>

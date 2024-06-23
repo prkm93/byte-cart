@@ -5,14 +5,12 @@ import ProductCard from "../ProductCard";
 import styles from "./ProductList.module.css";
 
 const ProductList = () => {
-  const {
-    productState: { productList },
-  } = useProducts();
+  const { filterByPrice: filteredProductList } = useProducts();
 
   return (
     <div className={styles.productList}>
-      {productList &&
-        productList.map((product) => {
+      {filteredProductList &&
+        filteredProductList.map((product) => {
           return <ProductCard product={product} key={product._id} />;
         })}
     </div>

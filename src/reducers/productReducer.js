@@ -1,8 +1,10 @@
 import { productActionTypes, filterTypes } from "../utils/constant";
+import { getMaxPrice } from "../utils/utils";
 
 const { FETCH_CATEGORIES, FETCH_PRODUCTS, IS_LOADING, GET_PRODUCT_DETAILS } =
   productActionTypes;
 const {
+  SET_MAX_PRICE,
   SEARCH_PRODUCT,
   FILTER_BY_CATEGORY,
   FILTER_BY_PRICE,
@@ -30,6 +32,7 @@ export const productReducer = (state = initialProductState, action) => {
       return {
         ...state,
         productList: payload,
+        priceRangeInput: getMaxPrice(payload),
       };
     case FETCH_CATEGORIES:
       return {
@@ -49,7 +52,12 @@ export const productReducer = (state = initialProductState, action) => {
     case SEARCH_PRODUCT:
       return {
         ...state,
-        searchProduct: payload,
+        searchProduct: payload.toLowerCase(),
+      };
+    case SET_MAX_PRICE:
+      return {
+        ...state,
+        priceRangeInput: payload,
       };
     case FILTER_BY_PRICE:
       return {
@@ -81,7 +89,7 @@ export const productReducer = (state = initialProductState, action) => {
         productList: payload.productList,
         categoryList: payload.categoryList,
         searchProduct: "",
-        priceRangeInput: 0,
+        priceRangeInput: getMaxPrice(payload.productList),
         categoryInput: [],
         ratingInput: "",
         sortByPrice: "",

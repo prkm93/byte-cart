@@ -6,6 +6,7 @@ export const productActionTypes = {
 };
 
 export const filterTypes = {
+  SET_MAX_PRICE: "SET_MAX_PRICE",
   SEARCH_PRODUCT: "SEARCH_PRODUCT",
   FILTER_BY_PRICE: "FILTER_BY_PRICE",
   FILTER_BY_CATEGORY: "FILTER_BY_CATEGORY",
