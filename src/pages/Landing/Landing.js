@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../context/ProductContext";
 import { filterActionTypes } from "../../utils/constant";
 import styles from "./Landing.module.css";
-import electronics_img from "../../logos/electronic thumbail.png";
+import ecommerce_hero from "../../logos/ecommerce-hero.png";
 
 const Landing = () => {
   const {
@@ -31,7 +31,7 @@ const Landing = () => {
     <div className={styles.home_container}>
       <img
         className={styles.landing_thumbail}
-        src={electronics_img}
+        src={ecommerce_hero}
         alt="electronics thumbail"
       />
       <div className={styles.category_label}>

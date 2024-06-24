@@ -61,7 +61,7 @@ const ProductDetail = () => {
           </div>
           <div className={styles.product_more_detail}>
             <span className={styles.product_detail_label}>Description:</span>{" "}
-            {description?.slice(0, 80)}...
+            {description?.slice(0, 200)}...
           </div>
           <div className={styles.product_more_detail}>
             <span className={styles.product_detail_label}>In Stock:</span>{" "}

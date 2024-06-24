@@ -70,7 +70,7 @@ const ProductFilter = () => {
           id="price_range"
           min={0}
           max={maxPrice}
-          step={50}
+          step={10}
           value={priceRangeInput}
           onChange={(e) =>
             productDispatch({
@@ -92,7 +92,7 @@ const ProductFilter = () => {
                 type="checkbox"
                 name="category-checkbox"
                 id={`${item}-checkbox`}
-                checked={categoryInput.includes(item)}
+                checked={categoryInput.includes(item.toLowerCase())}
                 onChange={() =>
                   productDispatch({
                     type: FILTER_BY_CATEGORY,

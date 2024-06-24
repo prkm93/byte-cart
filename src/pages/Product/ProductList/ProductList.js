@@ -9,7 +9,7 @@ const ProductList = () => {
 
   return (
     <div className={styles.productList}>
-      {filteredProductList?.length &&
+      {filteredProductList?.length > 0 &&
         filteredProductList?.map((product) => {
           return <ProductCard product={product} key={product._id} />;
         })}

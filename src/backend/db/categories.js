@@ -99,120 +99,43 @@ export const categories = [
     categoryName: "Beauty",
     slug: "beauty",
     url: "https://dummyjson.com/products/category/beauty",
-  },
-  {
-    categoryName: "Fragrances",
-    slug: "fragrances",
-    url: "https://dummyjson.com/products/category/fragrances",
+    thumbnail:
+      "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/1.png",
   },
   {
     categoryName: "Furniture",
     slug: "furniture",
     url: "https://dummyjson.com/products/category/furniture",
+    thumbnail:
+      "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
   },
   {
     categoryName: "Groceries",
     slug: "groceries",
     url: "https://dummyjson.com/products/category/groceries",
-  },
-  {
-    categoryName: "Home Decoration",
-    slug: "home-decoration",
-    url: "https://dummyjson.com/products/category/home-decoration",
-  },
-  {
-    categoryName: "Kitchen Accessories",
-    slug: "kitchen-accessories",
-    url: "https://dummyjson.com/products/category/kitchen-accessories",
+    thumbnail:
+      "https://cdn.dummyjson.com/products/images/groceries/Protein%20Powder/1.png",
   },
   {
     categoryName: "Laptops",
     slug: "laptops",
     url: "https://dummyjson.com/products/category/laptops",
+    thumbnail:
+      "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/2.png",
   },
-  {
-    categoryName: "Mens Shirts",
-    slug: "mens-shirts",
-    url: "https://dummyjson.com/products/category/mens-shirts",
-  },
-  {
-    categoryName: "Mens Shoes",
-    slug: "mens-shoes",
-    url: "https://dummyjson.com/products/category/mens-shoes",
-  },
-  {
-    categoryName: "Mens Watches",
-    slug: "mens-watches",
-    url: "https://dummyjson.com/products/category/mens-watches",
-  },
-  {
-    categoryName: "Mobile Accessories",
-    slug: "mobile-accessories",
-    url: "https://dummyjson.com/products/category/mobile-accessories",
-  },
-  {
-    categoryName: "Motorcycle",
-    slug: "motorcycle",
-    url: "https://dummyjson.com/products/category/motorcycle",
-  },
-  {
-    categoryName: "Skin Care",
-    slug: "skin-care",
-    url: "https://dummyjson.com/products/category/skin-care",
-  },
+
   {
     categoryName: "Smartphones",
     slug: "smartphones",
     url: "https://dummyjson.com/products/category/smartphones",
-  },
-  {
-    categoryName: "Sports Accessories",
-    slug: "sports-accessories",
-    url: "https://dummyjson.com/products/category/sports-accessories",
+    thumbnail:
+      "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/2.png",
   },
   {
     categoryName: "Sunglasses",
     slug: "sunglasses",
     url: "https://dummyjson.com/products/category/sunglasses",
-  },
-  {
-    categoryName: "Tablets",
-    slug: "tablets",
-    url: "https://dummyjson.com/products/category/tablets",
-  },
-  {
-    categoryName: "Tops",
-    slug: "tops",
-    url: "https://dummyjson.com/products/category/tops",
-  },
-  {
-    categoryName: "Vehicle",
-    slug: "vehicle",
-    url: "https://dummyjson.com/products/category/vehicle",
-  },
-  {
-    categoryName: "Womens Bags",
-    slug: "womens-bags",
-    url: "https://dummyjson.com/products/category/womens-bags",
-  },
-  {
-    categoryName: "Womens Dresses",
-    slug: "womens-dresses",
-    url: "https://dummyjson.com/products/category/womens-dresses",
-  },
-  {
-    categoryName: "Womens Jewellery",
-    slug: "womens-jewellery",
-    url: "https://dummyjson.com/products/category/womens-jewellery",
-  },
-  {
-    categoryName: "Womens Shoes",
-    slug: "womens-shoes",
-    url: "https://dummyjson.com/products/category/womens-shoes",
-  },
-  {
-    categoryName: "Womens Watches",
-    slug: "womens-watches",
-    url: "https://dummyjson.com/products/category/womens-watches",
+    thumbnail:
+      "https://cdn.dummyjson.com/products/images/sunglasses/Classic%20Sun%20Glasses/2.png",
   },
 ];
