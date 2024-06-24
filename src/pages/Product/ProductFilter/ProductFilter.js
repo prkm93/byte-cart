@@ -1,7 +1,7 @@
 import React from "react";
 import { useProducts } from "../../../context/ProductContext";
 import { discountedPrice, capitalise1stChar } from "../../../utils/utils";
-import { filterTypes } from "../../../utils/constant";
+import { filterActionTypes } from "../../../utils/constant";
 import styles from "./ProductFilter.module.css";
 
 const ProductFilter = () => {
@@ -22,7 +22,7 @@ const ProductFilter = () => {
     FILTER_BY_RATING,
     SORT,
     CLEAR_FILTER,
-  } = filterTypes;
+  } = filterActionTypes;
 
   const prices = productList
     .map((product) =>

@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
           setToken(encodedToken);
           setUserDetails(foundUser);
           toast.success(`Hi 👋, Welcome back ${foundUser.firstName}`);
-          navigate("/");
+          navigate("/home");
         }
         setIsLoading(false);
       } catch (err) {
@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
           setToken(encodedToken);
           setUserDetails(createdUser);
           toast.success("User signed up successfully");
-          navigate("/");
+          navigate("/home");
         }
         setIsLoading(false);
       } catch (err) {

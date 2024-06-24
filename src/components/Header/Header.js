@@ -7,7 +7,7 @@ import { CgProfile } from "react-icons/cg";
 
 import { useAuth } from "../../context/AuthContext";
 import { useProducts } from "../../context/ProductContext";
-import { filterTypes } from "../../utils/constant";
+import { filterActionTypes } from "../../utils/constant";
 import apparel_logo from "../../logos/apparel-icon.jpg";
 import styles from "./Header.module.css";
 
@@ -17,7 +17,7 @@ const Header = () => {
     productState: { searchProduct },
     productDispatch,
   } = useProducts();
-  const { SEARCH_PRODUCT } = filterTypes;
+  const { SEARCH_PRODUCT } = filterActionTypes;
   const navigate = useNavigate();
 
   return (

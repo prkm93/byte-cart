@@ -1,4 +1,4 @@
-import { productActionTypes, filterTypes } from "../utils/constant";
+import { productActionTypes, filterActionTypes } from "../utils/constant";
 import { getMaxPrice } from "../utils/utils";
 
 const { FETCH_CATEGORIES, FETCH_PRODUCTS, IS_LOADING, GET_PRODUCT_DETAILS } =
@@ -10,7 +10,7 @@ const {
   SORT,
   FILTER_BY_RATING,
   CLEAR_FILTER,
-} = filterTypes;
+} = filterActionTypes;
 
 export const initialProductState = {
   productList: [],

@@ -2,9 +2,9 @@
   width: 15vw;
   min-width: 15vw;
   margin-top: 4.5rem;
-  height: 100vh;
+  height: auto;
   padding: 1rem;
-  position: fixed;
+  position: sticky;
   border-right: 7px solid rgb(159, 49, 115, 0.1);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

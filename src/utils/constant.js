@@ -5,11 +5,22 @@ export const productActionTypes = {
   GET_PRODUCT_DETAILS: "GET_PRODUCT_DETAILS",
 };
 
-export const filterTypes = {
+export const filterActionTypes = {
   SEARCH_PRODUCT: "SEARCH_PRODUCT",
   FILTER_BY_PRICE: "FILTER_BY_PRICE",
   FILTER_BY_CATEGORY: "FILTER_BY_CATEGORY",
   FILTER_BY_RATING: "FILTER_BY_RATING",
   SORT: "SORT",
   CLEAR_FILTER: "CLEAR_FILTER",
+};
+
+export const cartActionTypes = {
+  ADD_TO_CART: "ADD_TO_CART",
+  REMOVE_FROM_CART: "REMOVE_FROM_CART",
+  UPDATE_QUANTITY: "UPDATE_QUANTITY",
+};
+
+export const wishListActionTypes = {
+  ADD_TO_WISHLIST: "ADD_TO_WISHLIST",
+  REMOVE_FROM_WISHLIST: "REMOVE_FROM_WISHLIST",
 };

@@ -1,8 +1,8 @@
 .productList {
   width: 85vw;
   display: flex;
-  margin-left: 15vw;
-  padding: 6rem 2rem 2rem 5rem;
+  /* margin-left: 15vw; */
+  padding: 6rem 2rem 2rem 2rem;
   flex-wrap: wrap;
   gap: 1rem;
 }

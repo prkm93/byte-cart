@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useProducts } from "../../context/ProductContext";
-import { filterTypes } from "../../utils/constant";
+import { filterActionTypes } from "../../utils/constant";
 import styles from "./Landing.module.css";
 import electronics_img from "../../logos/electronic thumbail.png";
 
@@ -14,7 +14,7 @@ const Landing = () => {
 
   const navigate = useNavigate();
 
-  const { FILTER_BY_CATEGORY, CLEAR_FILTER } = filterTypes;
+  const { FILTER_BY_CATEGORY, CLEAR_FILTER } = filterActionTypes;
 
   useEffect(() => {
     productDispatch({
