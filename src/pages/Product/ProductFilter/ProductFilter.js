@@ -10,6 +10,7 @@ const ProductFilter = () => {
       productList,
       categoryList,
       categoryInput,
+      stockAvailableInput,
       priceRangeInput,
       ratingInput,
       sortByPrice,
@@ -19,6 +20,7 @@ const ProductFilter = () => {
   const {
     FILTER_BY_PRICE,
     FILTER_BY_CATEGORY,
+    FILTER_BY_STOCK,
     FILTER_BY_RATING,
     SORT,
     CLEAR_FILTER,
@@ -34,12 +36,13 @@ const ProductFilter = () => {
 
   const categories = categoryList.map(({ categoryName }) => categoryName);
   const Ratings = [4, 3, 2, 1];
+  const StockAvailability = ["In Stock", "Out of Stock"];
   console.log(useProducts().productState);
 
   return (
     <div className={styles.filter_section}>
       <div className={styles.filter_header}>
-        <div className={styles.filter_label}>Filters</div>
+        <div className={styles.label_header}>Filters</div>
         <div
           className={styles.clear_text}
           onClick={() =>
@@ -55,7 +58,7 @@ const ProductFilter = () => {
         </div>
       </div>
       <div className={styles.price_filter}>
-        <label htmlFor="price_range" className={styles.price_label}>
+        <label htmlFor="price_range" className={styles.label_header}>
           Price
         </label>
         <br />
@@ -82,7 +85,7 @@ const ProductFilter = () => {
         <label className={styles.current_price}>{priceRangeInput}</label>
       </div>
       <div className={styles.category_filter}>
-        <label htmlFor="categories" className={styles.category_label}>
+        <label htmlFor="categories" className={styles.label_header}>
           Categories
         </label>
         {categories.map((item) => {
@@ -107,8 +110,32 @@ const ProductFilter = () => {
           );
         })}
       </div>
+      <div className={styles.stock_filter}>
+        <label htmlFor="stockAvailability" className={styles.label_header}>
+          Availability
+        </label>
+        {StockAvailability.map((item) => {
+          return (
+            <div className={styles.checkbox} key={item}>
+              <input
+                type="checkbox"
+                name="stock-checkbox"
+                id={`${item}-checkbox`}
+                checked={stockAvailableInput.includes(item.toLowerCase())}
+                onChange={() =>
+                  productDispatch({
+                    type: FILTER_BY_STOCK,
+                    payload: item,
+                  })
+                }
+              />
+              <label htmlFor={`${item}-checkbox`}>{item}</label>
+            </div>
+          );
+        })}
+      </div>
       <div className={styles.rating_filter}>
-        <label htmlFor="rating" className={styles.rating_label}>
+        <label htmlFor="rating" className={styles.label_header}>
           Rating
         </label>
         {Ratings.map((rating) => {
@@ -132,7 +159,7 @@ const ProductFilter = () => {
         })}
       </div>
       <div className={styles.sort_filter}>
-        <label htmlFor="sort_price" className={styles.sort_price_label}>
+        <label htmlFor="sort_price" className={styles.label_header}>
           Sort by Price
         </label>
         <div className={styles.checkbox}>

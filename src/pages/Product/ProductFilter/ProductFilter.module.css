@@ -15,15 +15,12 @@
 }
 
 .price_filter,
-.category_filter {
+.category_filter,
+.stock_filter {
   margin: 2rem 0;
 }
 
-.filter_label,
-.price_label,
-.category_label,
-.rating_label,
-.sort_price_label {
+.label_header {
   font-weight: bolder;
 }
 

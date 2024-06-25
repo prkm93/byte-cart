@@ -10,17 +10,35 @@ import styles from "./ProductCard.module.css";
 const ProductCard = (product) => {
   const navigate = useNavigate();
   const { getProductDetails } = useProducts();
-  const { _id, price, rating, thumbnail, title, discountPercentage } =
-    product.product;
+  const {
+    _id,
+    price,
+    rating,
+    thumbnail,
+    title,
+    discountPercentage,
+    availabilityStatus,
+  } = product.product;
 
   return (
     <div
-      className={styles.product_card}
+      className={`${styles.product_card} ${
+        availabilityStatus === "Out of Stock" && styles.product_disable
+      }`}
       onClick={() => {
         getProductDetails(_id);
         navigate(`/products/${_id}`);
       }}>
-      <div>
+      <div
+        className={
+          availabilityStatus === "Out of Stock" && styles.product_stock
+        }>
+        {availabilityStatus === "Out of Stock" && availabilityStatus}
+      </div>
+      <div
+        className={
+          availabilityStatus === "Out of Stock" && styles.product_disable
+        }>
         <img className={styles.product_img} src={thumbnail} alt={title} />
       </div>
       <IoIosHeart className={styles.wishlist_icon} />
@@ -44,7 +62,12 @@ const ProductCard = (product) => {
           {Math.floor(discountPercentage)}% OFF
         </div>
       </div>
-      <button className={styles.cart_btn}>Add to cart</button>
+      <button
+        className={`${styles.cart_btn} ${
+          availabilityStatus === "Out of Stock" && styles.cart_btn_disabled
+        }`}>
+        Add to cart
+      </button>
     </div>
   );
 };

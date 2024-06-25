@@ -10,6 +10,7 @@ const {
   SORT,
   FILTER_BY_RATING,
   CLEAR_FILTER,
+  FILTER_BY_STOCK,
 } = filterActionTypes;
 
 export const initialProductState = {
@@ -20,6 +21,7 @@ export const initialProductState = {
   searchProduct: "",
   priceRangeInput: 0,
   categoryInput: [],
+  stockAvailableInput: [],
   ratingInput: "",
   sortByPrice: "",
 };
@@ -66,6 +68,17 @@ export const productReducer = (state = initialProductState, action) => {
               (item) => item.toLowerCase() !== payload.toLowerCase()
             )
           : [...state.categoryInput, payload.toLowerCase()],
+      };
+    case FILTER_BY_STOCK:
+      return {
+        ...state,
+        stockAvailableInput: state.stockAvailableInput.includes(
+          payload.toLowerCase()
+        )
+          ? state.stockAvailableInput.filter(
+              (item) => item.toLowerCase() !== payload.toLowerCase()
+            )
+          : [...state.stockAvailableInput, payload.toLowerCase()],
       };
     case FILTER_BY_RATING:
       return {

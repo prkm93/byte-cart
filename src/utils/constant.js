@@ -12,6 +12,7 @@ export const filterActionTypes = {
   FILTER_BY_RATING: "FILTER_BY_RATING",
   SORT: "SORT",
   CLEAR_FILTER: "CLEAR_FILTER",
+  FILTER_BY_STOCK: "FILTER_BY_STOCK",
 };
 
 export const cartActionTypes = {

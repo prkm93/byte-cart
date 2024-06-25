@@ -28,6 +28,7 @@ const ProductProvider = ({ children }) => {
     searchProduct,
     categoryInput,
     priceRangeInput,
+    stockAvailableInput,
     ratingInput,
     sortByPrice,
   } = productState;
@@ -110,15 +111,20 @@ const ProductProvider = ({ children }) => {
         )
       : filterBySearch;
 
-  const filterByRating =
-    ratingInput > 0
-      ? filterByCategory.filter(
-          ({ rating }) =>
-            Number(convertRatingToWholeNumber(rating)) >= Number(ratingInput)
+  const filterByStock =
+    stockAvailableInput.length > 0
+      ? filterByCategory.filter(({ availabilityStatus }) =>
+          stockAvailableInput.includes(availabilityStatus.toLowerCase())
         )
       : filterByCategory;
 
-  console.log("filterByRating ===>", filterByRating);
+  const filterByRating =
+    ratingInput > 0
+      ? filterByStock.filter(
+          ({ rating }) =>
+            Number(convertRatingToWholeNumber(rating)) >= Number(ratingInput)
+        )
+      : filterByStock;
 
   const sortingByPrice =
     sortByPrice.length > 0

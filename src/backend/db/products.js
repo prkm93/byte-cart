@@ -1394,7 +1394,7 @@ export const products = [
     weight: 3,
   },
   {
-    availabilityStatus: "In Stock",
+    availabilityStatus: "Out of Stock",
     brand: "Oppo",
     category: "smartphones",
     description:
@@ -2617,7 +2617,7 @@ export const products = [
     weight: 1,
   },
   {
-    availabilityStatus: "In Stock",
+    availabilityStatus: "Out of Stock",
     category: "groceries",
     description:
       "Sweet and juicy mulberries, perfect for snacking or adding to desserts and cereals.",
