@@ -5,3 +5,12 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+.product_unavailable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  padding-left: 22rem;
+}
