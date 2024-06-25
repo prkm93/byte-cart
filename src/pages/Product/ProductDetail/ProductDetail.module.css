@@ -17,7 +17,7 @@
 
 .product_detail_img_box {
   width: 35vw;
-  height: 30vh;
+  /* height: 30vh; */
   border: 15px solid #e5d4de;
   border-radius: 10px;
 }
@@ -28,9 +28,8 @@
 }
 
 .product_detail_info {
-  /* background-color: #e5d4de; */
   width: 35vw;
-  height: 30vh;
+  /* height: 30vh; */
   padding: 0 1rem;
   border-radius: 10px;
 }

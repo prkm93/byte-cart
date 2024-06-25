@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 
 /**
  * Category Database can be added here.
@@ -101,6 +101,8 @@ export const categories = [
     url: "https://dummyjson.com/products/category/beauty",
     thumbnail:
       "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/1.png",
+    description:
+      "Beauty items, or cosmetics, are substances or mixtures that are intended to be used on the outside of the human body. They can be used for cleaning, changing appearance, protection, maintenance, or to eliminate body odors. ",
   },
   {
     categoryName: "Furniture",
@@ -108,6 +110,8 @@ export const categories = [
     url: "https://dummyjson.com/products/category/furniture",
     thumbnail:
       "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
+    description:
+      "Explore our Furniture Mega Sale and enjoy discounts of up to 30% on a vast selection of top-quality furniture. Don't miss this chance to furnish your dream space for less. Shop now and save big!",
   },
   {
     categoryName: "Groceries",
@@ -115,6 +119,8 @@ export const categories = [
     url: "https://dummyjson.com/products/category/groceries",
     thumbnail:
       "https://cdn.dummyjson.com/products/images/groceries/Protein%20Powder/1.png",
+    description:
+      "Get Exclusive Offer On Grocery Item & Get Extra CashKaro Cashback | Grocery offers updated 5 minutes ago | Avail Grocery Item deals today! ",
   },
   {
     categoryName: "Laptops",
@@ -122,6 +128,8 @@ export const categories = [
     url: "https://dummyjson.com/products/category/laptops",
     thumbnail:
       "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/2.png",
+    description:
+      "Mega Clearance Bonanza! Up to 70% off in our year-end clearance sale.",
   },
 
   {
@@ -130,6 +138,8 @@ export const categories = [
     url: "https://dummyjson.com/products/category/smartphones",
     thumbnail:
       "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/2.png",
+    description:
+      "Buy mobile phones at best prices. Ecommerce Store is right platform for you to look for a mobile phone that fits your budget, technical and design requirements as we have phones ranging from Rs 350 up to Rs 1,00,000+.",
   },
   {
     categoryName: "Sunglasses",
@@ -137,5 +147,7 @@ export const categories = [
     url: "https://dummyjson.com/products/category/sunglasses",
     thumbnail:
       "https://cdn.dummyjson.com/products/images/sunglasses/Classic%20Sun%20Glasses/2.png",
+    description:
+      "Enjoy latest offers, deals and sales on branded sunglasses of Rayban etc and goggles and by them for cheap in clearance sales",
   },
 ];

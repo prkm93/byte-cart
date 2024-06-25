@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
 
 import { useProducts } from "../../../context/ProductContext";
@@ -7,7 +7,7 @@ import { discountedPrice, currencyFormatter } from "../../../utils/utils";
 import styles from "./ProductDetail.module.css";
 
 const ProductDetail = () => {
-  const { productId } = useParams();
+  // const { productId } = useParams();
   const {
     productState: { productDetail },
   } = useProducts();
@@ -61,7 +61,7 @@ const ProductDetail = () => {
           </div>
           <div className={styles.product_more_detail}>
             <span className={styles.product_detail_label}>Description:</span>{" "}
-            {description?.slice(0, 200)}...
+            {description}
           </div>
           <div className={styles.product_more_detail}>
             <span className={styles.product_detail_label}>In Stock:</span>{" "}
