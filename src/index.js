@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { AuthProvider } from "./context/AuthContext";
 import { ProductProvider } from "./context/ProductContext";
+import { CartProvider } from "./context/CartContext";
+import { WishListProvider } from "./context/WishlistContext";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -17,7 +19,11 @@ root.render(
     <BrowserRouter>
       <AuthProvider>
         <ProductProvider>
-          <App />
+          <WishListProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </WishListProvider>
         </ProductProvider>
       </AuthProvider>
     </BrowserRouter>

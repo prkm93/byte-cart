@@ -128,19 +128,21 @@ const ProductProvider = ({ children }) => {
 
   const sortingByPrice =
     sortByPrice.length > 0
-      ? sortByPrice === "sortHighToLow"
-        ? filterByRating.sort((a, b) => b.price - a.price)
-        : filterByRating.sort((a, b) => a.price - b.price)
+      ? filterByRating.sort((a, b) =>
+          sortByPrice === "sortHighToLow"
+            ? b.price - a.price
+            : a.price - b.price
+        )
       : filterByRating;
 
   const filterByPrice =
-    priceRangeInput > 0
+    priceRangeInput >= 0
       ? sortingByPrice.filter(
           ({ price, discountPercentage }) =>
             discountedPrice(price, discountPercentage) <=
             Number(priceRangeInput)
         )
-      : sortByPrice;
+      : sortingByPrice;
 
   useEffect(() => {
     fetchCategory();

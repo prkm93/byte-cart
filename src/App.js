@@ -12,7 +12,8 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import Product from "./pages/Product";
-import WishList from "./pages/Wishlist";
+import WishList from "./pages/WishList";
+import CartList from "./pages/CartList";
 import ProductDetail from "./pages/Product/ProductDetail";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/products" element={<Product />} />
         <Route path="/wishlist" element={<WishList />} />
+        <Route path="/cartlist" element={<CartList />} />
         <Route path="/products/:productId" element={<ProductDetail />} />
       </Routes>
       <Footer />

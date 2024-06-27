@@ -14,6 +14,8 @@ const Signup = () => {
   });
   const [error, setError] = useState(false);
 
+  document.title = "SignUp | Retail Store";
+
   const handleSignUp = (e) => {
     e.preventDefault();
 

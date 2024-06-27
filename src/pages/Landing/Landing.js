@@ -27,6 +27,8 @@ const Landing = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  document.title = "Retail Store";
+
   return (
     <div className={styles.home_container}>
       <img

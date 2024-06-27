@@ -18,6 +18,9 @@ const Login = () => {
       password: "RajM",
     },
   ];
+
+  document.title = "Login | Retail Store";
+
   const { onLoginHandler } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

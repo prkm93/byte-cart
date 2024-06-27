@@ -7,14 +7,10 @@ import { discountedPrice, currencyFormatter } from "../../../utils/utils";
 import styles from "./ProductDetail.module.css";
 
 const ProductDetail = () => {
-  // const { productId } = useParams();
   const {
     productState: { productDetail },
   } = useProducts();
 
-  console.log("product", productDetail);
-  //   const foundProduct = product.find(({ _id }) => _id === productId);
-  //   console.log("foundProduct", foundProduct);
   const {
     _id,
     brand,
@@ -26,6 +22,8 @@ const ProductDetail = () => {
     stock,
     discountPercentage,
   } = productDetail;
+
+  document.title = `${title} | Retail Store`;
 
   return (
     <div className={styles.product_detail_container} key={_id}>

@@ -22,6 +22,7 @@ export const cartActionTypes = {
 };
 
 export const wishListActionTypes = {
+  GET_WISHLIST: "GET_WISHLIST",
   ADD_TO_WISHLIST: "ADD_TO_WISHLIST",
   REMOVE_FROM_WISHLIST: "REMOVE_FROM_WISHLIST",
 };
