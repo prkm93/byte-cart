@@ -32,7 +32,7 @@ export const productReducer = (state = initialProductState, action) => {
     case FETCH_PRODUCTS:
       return {
         ...state,
-        productList: payload.map((item) => ({ ...item, wished: false })),
+        productList: payload,
         priceRangeInput: getMaxPrice(payload),
       };
     case FETCH_CATEGORIES:

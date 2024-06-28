@@ -3,6 +3,7 @@ import Mockman from "mockman-js";
 
 import { useAuth } from "./context/AuthContext";
 import { useProducts } from "./context/ProductContext";
+import { useWishlist } from "./context/WishlistContext";
 
 import Loader from "./components/Loader";
 import Header from "./components/Header";
@@ -21,6 +22,9 @@ function App() {
   const {
     productState: { isLoadingItems },
   } = useProducts();
+  const {
+    wishlistState: { isLoadingWishListItems },
+  } = useWishlist();
 
   return (
     <div>
@@ -37,7 +41,7 @@ function App() {
       </Routes>
       <Footer />
       <ToastSetter />
-      {(isLoading || isLoadingItems) && (
+      {(isLoading || isLoadingItems || isLoadingWishListItems) && (
         <div>
           <Loader />
         </div>

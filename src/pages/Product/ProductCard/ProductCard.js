@@ -11,7 +11,7 @@ import styles from "./ProductCard.module.css";
 const ProductCard = (product) => {
   const navigate = useNavigate();
   const { getProductDetails } = useProducts();
-  const { wishlistState, addToWishlistHandler, removeFromWishlistHandler } =
+  const { addToWishlistHandler, removeFromWishlistHandler, isItemInWishlist } =
     useWishlist();
   const token = JSON.parse(localStorage.getItem("userInfo"))?.encodedToken;
   const {
@@ -22,10 +22,7 @@ const ProductCard = (product) => {
     title,
     discountPercentage,
     availabilityStatus,
-    wished,
   } = product.product;
-
-  console.log("wishlistState ===>", wishlistState);
 
   return (
     <div
@@ -56,10 +53,12 @@ const ProductCard = (product) => {
       </div>
       <IoIosHeart
         className={`${styles.wishlist_icon} ${
-          wished && styles.wishlist_icon_wished
+          isItemInWishlist(_id) && styles.wishlist_icon_wished
+        } ${
+          availabilityStatus === "Out of Stock" && styles.wishlist_icon_disabled
         }`}
         onClick={() =>
-          wished
+          isItemInWishlist(_id)
             ? removeFromWishlistHandler(_id, token)
             : addToWishlistHandler(product.product, token)
         }
@@ -95,6 +94,7 @@ const ProductCard = (product) => {
         className={`${styles.cart_btn} ${
           availabilityStatus === "Out of Stock" && styles.cart_btn_disabled
         }`}
+        disabled={availabilityStatus === "Out of Stock"}
         onClick={() => (token ? navigate("/cartlist") : navigate("/login"))}>
         Add to cart
       </button>

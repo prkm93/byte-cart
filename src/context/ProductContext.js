@@ -157,6 +157,7 @@ const ProductProvider = ({ children }) => {
         productDispatch,
         getProductDetails,
         filterByPrice,
+        handleLoader,
       }}>
       {children}
     </ProductContext.Provider>

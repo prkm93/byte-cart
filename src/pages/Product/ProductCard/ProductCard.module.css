@@ -47,6 +47,7 @@
 
 .product_img_disable {
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .card_title {
@@ -78,10 +79,15 @@
   padding: 0.3rem;
   color: rgb(76, 23, 55, 0.5);
   border-bottom-left-radius: 7px;
+  cursor: grab;
 }
 
 .wishlist_icon_wished {
   color: rgb(244, 37, 117);
+}
+
+.wishlist_icon_disabled {
+  pointer-events: none;
 }
 
 .wishlist_icon:hover {

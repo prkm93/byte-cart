@@ -52,6 +52,7 @@
   text-decoration: none;
   font-weight: bold;
   color: rgb(159, 49, 115);
+  cursor: pointer;
 }
 
 /**rgb(252, 109, 65)*/
@@ -79,9 +80,29 @@
   cursor: pointer;
 }
 
+.nav_icon_container {
+  display: flex;
+  position: relative;
+}
 .nav_item_icon {
   font-size: 2rem;
   color: rgb(159, 49, 115);
   text-decoration: none;
   cursor: pointer;
+}
+
+.wishlist_count {
+  position: absolute;
+  left: 60%;
+  bottom: 45%;
+  /* background: #01ae01; */
+  background: rgb(244, 66, 173);
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
 }

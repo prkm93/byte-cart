@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
@@ -7,6 +7,7 @@ import { CgProfile } from "react-icons/cg";
 
 import { useAuth } from "../../context/AuthContext";
 import { useProducts } from "../../context/ProductContext";
+import { useWishlist } from "../../context/WishlistContext";
 import { filterActionTypes } from "../../utils/constant";
 import apparel_logo from "../../logos/apparel-icon.jpg";
 import styles from "./Header.module.css";
@@ -16,7 +17,11 @@ const Header = () => {
   const {
     productState: { searchProduct },
     productDispatch,
+    handleLoader,
   } = useProducts();
+  const {
+    wishlistState: { wishlistProducts },
+  } = useWishlist();
   const { SEARCH_PRODUCT } = filterActionTypes;
   const navigate = useNavigate();
 
@@ -47,9 +52,17 @@ const Header = () => {
       <div>
         <ul className={styles.nav_links}>
           <li className={styles.nav_item}>
-            <a className={styles.nav_explore_link} href="/products">
+            <Link
+              className={styles.nav_explore_link}
+              onClick={() => {
+                handleLoader(true);
+                setTimeout(() => {
+                  handleLoader(false);
+                  navigate("/products");
+                }, 500);
+              }}>
               Explore
-            </a>
+            </Link>
           </li>
           <li className={styles.nav_item}>
             {token ? (
@@ -63,15 +76,32 @@ const Header = () => {
             )}
           </li>
           <li className={styles.nav_item}>
-            <CiHeart
-              className={styles.nav_item_icon}
-              onClick={() =>
-                token ? navigate("/wishlist") : navigate("/login")
-              }
-            />
+            <div className={styles.nav_icon_container}>
+              <CiHeart
+                className={styles.nav_item_icon}
+                onClick={() =>
+                  token ? navigate("/wishlist") : navigate("/login")
+                }
+              />
+              {token && wishlistProducts.length > 0 && (
+                <div className={styles.wishlist_count}>
+                  {wishlistProducts.length}
+                </div>
+              )}
+            </div>
           </li>
           <li className={styles.nav_item}>
-            <IoCartOutline className={styles.nav_item_icon} />
+            <div className={styles.nav_icon_container}>
+              <IoCartOutline
+                className={styles.nav_item_icon}
+                onClick={() => navigate("/cartlist")}
+              />
+              {token && wishlistProducts.length > 0 && (
+                <div className={styles.wishlist_count}>
+                  {wishlistProducts.length}
+                </div>
+              )}
+            </div>
           </li>
           {token && (
             <li className={styles.nav_item}>

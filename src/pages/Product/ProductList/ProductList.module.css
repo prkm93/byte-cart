@@ -1,9 +1,14 @@
 .productList {
   /* width: 85vw; */
   display: flex;
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 1rem 2rem 2rem 2rem;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.product_display_count {
+  margin: 5.5rem 0 0 1rem;
+  font-weight: 600;
 }
 
 .product_unavailable {
