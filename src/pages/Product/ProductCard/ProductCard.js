@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa6";
 
 import { useWishlist } from "../../../context/WishlistContext";
 import { useProducts } from "../../../context/ProductContext";
+import { useCart } from "../../../context/CartContext";
 import { discountedPrice, currencyFormatter } from "../../../utils/utils";
 import styles from "./ProductCard.module.css";
 
@@ -13,6 +14,11 @@ const ProductCard = (product) => {
   const { getProductDetails } = useProducts();
   const { addToWishlistHandler, removeFromWishlistHandler, isItemInWishlist } =
     useWishlist();
+  const {
+    cartState: { cartItemList },
+    cartDispatch,
+    addtoCartHandler,
+  } = useCart();
   const token = JSON.parse(localStorage.getItem("userInfo"))?.encodedToken;
   const {
     _id,
@@ -23,6 +29,8 @@ const ProductCard = (product) => {
     discountPercentage,
     availabilityStatus,
   } = product.product;
+
+  console.log("useCart().cartState", useCart().cartState);
 
   return (
     <div
@@ -90,14 +98,31 @@ const ProductCard = (product) => {
           {Math.floor(discountPercentage)}% OFF
         </div>
       </div>
-      <button
-        className={`${styles.cart_btn} ${
-          availabilityStatus === "Out of Stock" && styles.cart_btn_disabled
-        }`}
-        disabled={availabilityStatus === "Out of Stock"}
-        onClick={() => (token ? navigate("/cartlist") : navigate("/login"))}>
-        Add to cart
-      </button>
+      {token &&
+      cartItemList.length > 0 &&
+      Boolean(cartItemList.find((item) => item._id === _id)) ? (
+        <button
+          className={`${styles.cart_btn} ${
+            availabilityStatus === "Out of Stock" && styles.cart_btn_disabled
+          } ${styles.cart_btn_added}`}
+          disabled={availabilityStatus === "Out of Stock"}
+          onClick={() => navigate("/cartlist")}>
+          Go to cart
+        </button>
+      ) : (
+        <button
+          className={`${styles.cart_btn} ${
+            availabilityStatus === "Out of Stock" && styles.cart_btn_disabled
+          }`}
+          disabled={availabilityStatus === "Out of Stock"}
+          onClick={() =>
+            token
+              ? addtoCartHandler(product.product, token)
+              : navigate("/login")
+          }>
+          Add to cart
+        </button>
+      )}
     </div>
   );
 };

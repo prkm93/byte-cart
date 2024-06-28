@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const getCartService = () => {
-  return axios.get("/api/user/cart");
+const getCartService = (encodedToken) => {
+  return axios.get("/api/user/cart", {
+    headers: { authorization: encodedToken },
+  });
 };
 
 const addToCartService = (product, encodedToken) => {

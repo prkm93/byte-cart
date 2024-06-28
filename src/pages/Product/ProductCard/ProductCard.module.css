@@ -152,3 +152,11 @@
   color: #fff;
   cursor: not-allowed;
 }
+
+.cart_btn_added {
+  background: #4dc64d;
+}
+
+.cart_btn_added:hover {
+  background: #018b01;
+}

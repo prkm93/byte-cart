@@ -10,7 +10,6 @@ const ProductList = () => {
     filterByPrice: filteredProductList,
   } = useProducts();
 
-  console.log("filteredProductList", filteredProductList);
   return (
     <div>
       <div className={styles.product_display_count}>

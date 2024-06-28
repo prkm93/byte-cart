@@ -8,6 +8,7 @@ import { CgProfile } from "react-icons/cg";
 import { useAuth } from "../../context/AuthContext";
 import { useProducts } from "../../context/ProductContext";
 import { useWishlist } from "../../context/WishlistContext";
+import { useCart } from "../../context/CartContext";
 import { filterActionTypes } from "../../utils/constant";
 import apparel_logo from "../../logos/apparel-icon.jpg";
 import styles from "./Header.module.css";
@@ -22,6 +23,9 @@ const Header = () => {
   const {
     wishlistState: { wishlistProducts },
   } = useWishlist();
+  const {
+    cartState: { cartItemList },
+  } = useCart();
   const { SEARCH_PRODUCT } = filterActionTypes;
   const navigate = useNavigate();
 
@@ -96,9 +100,9 @@ const Header = () => {
                 className={styles.nav_item_icon}
                 onClick={() => navigate("/cartlist")}
               />
-              {token && wishlistProducts.length > 0 && (
+              {token && cartItemList.length > 0 && (
                 <div className={styles.wishlist_count}>
-                  {wishlistProducts.length}
+                  {cartItemList.length}
                 </div>
               )}
             </div>

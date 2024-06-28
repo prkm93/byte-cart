@@ -16,6 +16,8 @@ export const filterActionTypes = {
 };
 
 export const cartActionTypes = {
+  IS_LOADING_CART: "IS_LOADING_CART",
+  GET_CART: "GET_CART",
   ADD_TO_CART: "ADD_TO_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
   UPDATE_QUANTITY: "UPDATE_QUANTITY",

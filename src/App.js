@@ -4,6 +4,7 @@ import Mockman from "mockman-js";
 import { useAuth } from "./context/AuthContext";
 import { useProducts } from "./context/ProductContext";
 import { useWishlist } from "./context/WishlistContext";
+import { useCart } from "./context/CartContext";
 
 import Loader from "./components/Loader";
 import Header from "./components/Header";
@@ -25,6 +26,9 @@ function App() {
   const {
     wishlistState: { isLoadingWishListItems },
   } = useWishlist();
+  const {
+    cartState: { isLoadingCartItems },
+  } = useCart();
 
   return (
     <div>
@@ -41,7 +45,10 @@ function App() {
       </Routes>
       <Footer />
       <ToastSetter />
-      {(isLoading || isLoadingItems || isLoadingWishListItems) && (
+      {(isLoading ||
+        isLoadingItems ||
+        isLoadingWishListItems ||
+        isLoadingCartItems) && (
         <div>
           <Loader />
         </div>
