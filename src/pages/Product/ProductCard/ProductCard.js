@@ -16,7 +16,6 @@ const ProductCard = (product) => {
     useWishlist();
   const {
     cartState: { cartItemList },
-    cartDispatch,
     addtoCartHandler,
   } = useCart();
   const token = JSON.parse(localStorage.getItem("userInfo"))?.encodedToken;
@@ -30,8 +29,6 @@ const ProductCard = (product) => {
     availabilityStatus,
   } = product.product;
 
-  console.log("useCart().cartState", useCart().cartState);
-
   return (
     <div
       className={`${styles.product_card} ${
@@ -44,9 +41,9 @@ const ProductCard = (product) => {
         {availabilityStatus === "Out of Stock" && availabilityStatus}
       </div>
       <div
-        className={
+        className={`${styles.product_img_wrapper} ${
           availabilityStatus === "Out of Stock" && styles.product_disable
-        }
+        }`}
         onClick={() => {
           getProductDetails(_id);
           navigate(`/products/${_id}`);

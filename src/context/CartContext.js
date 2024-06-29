@@ -15,8 +15,13 @@ const CartContext = createContext(null);
 const CartProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, initialCartState);
 
-  const { IS_LOADING_CART, GET_CART, ADD_TO_CART, REMOVE_FROM_CART } =
-    cartActionTypes;
+  const {
+    IS_LOADING_CART,
+    GET_CART,
+    ADD_TO_CART,
+    REMOVE_FROM_CART,
+    UPDATE_CART,
+  } = cartActionTypes;
   const token = JSON.parse(localStorage.getItem("userInfo"))?.encodedToken;
 
   const handleCartLoader = (booleanVal) => {
@@ -47,19 +52,63 @@ const CartProvider = ({ children }) => {
   const addtoCartHandler = async (product, token) => {
     handleCartLoader(true);
     try {
-      const response = await addToCartService(product, token);
-      console.log("response add cart ===>", response);
-      cartDispatch({
-        type: ADD_TO_CART,
-        payload: response.data.cart,
-      });
-      toast.success(`${product.title} added to cart 🛒`, {
+      const { status } = await addToCartService(product, token);
+      if (status === 201) {
+        cartDispatch({
+          type: ADD_TO_CART,
+          payload: product,
+        });
+      }
+      toast.success(`${product.title} added to cart  🛒`, {
         position: "bottom-right",
       });
     } catch (error) {
       console.error(error);
+      toast.error("Something went wrong while adding to cart");
     }
     handleCartLoader(false);
+  };
+
+  const removeFromCartHandler = async (productId, token) => {
+    handleCartLoader(true);
+    try {
+      const { status } = await removeFromCartService(productId, token);
+      if (status === 200) {
+        cartDispatch({
+          type: REMOVE_FROM_CART,
+          payload: productId,
+        });
+        toast.success("Item removed from cart  🛒", {
+          position: "bottom-right",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong while removeing from cart");
+    }
+    handleCartLoader(false);
+  };
+
+  const updateCartHandler = async (productId, type, token) => {
+    try {
+      const { status } = await updateCartQuantityService(
+        productId,
+        type,
+        token
+      );
+      if (status === 200) {
+        cartDispatch({
+          type: UPDATE_CART,
+          payload: {
+            productId,
+            type,
+          },
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong while updating cart items");
+    }
   };
 
   useEffect(() => {
@@ -70,7 +119,14 @@ const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cartState, cartDispatch, addtoCartHandler, handleCartLoader }}>
+      value={{
+        cartState,
+        cartDispatch,
+        addtoCartHandler,
+        removeFromCartHandler,
+        handleCartLoader,
+        updateCartHandler,
+      }}>
       {children}
     </CartContext.Provider>
   );

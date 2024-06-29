@@ -1,0 +1,140 @@
+.item_card {
+  display: flex;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+.item_img_wrapper {
+  width: 15rem;
+  position: relative;
+}
+
+.item_img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 100%;
+}
+
+.item_wishlist {
+  position: absolute;
+  right: 0rem;
+  font-size: 1.3rem;
+  color: rgb(76, 23, 55, 0.5);
+  background-color: #e5d4de;
+  padding: 0.3rem;
+  border-bottom-left-radius: 3px;
+  cursor: pointer;
+}
+
+.wishlist_icon_wished {
+  color: rgb(244, 37, 117);
+}
+
+.star_icon {
+  position: absolute;
+  padding: 0.3rem;
+  bottom: 0;
+  font-size: 1rem;
+  background-color: #e5d4de;
+  color: rgb(76, 23, 55, 0.5);
+}
+
+.rating {
+  position: absolute;
+  padding: 0.3rem;
+  left: 1.42em;
+  bottom: 0;
+  font-size: 0.9rem;
+  border-top-right-radius: 5px;
+  background-color: #e5d4de;
+}
+
+.item_details {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+  background-color: #f8f8f8;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.item_title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 0 0.6rem 0;
+}
+
+.item_price_details {
+  display: flex;
+  margin-bottom: 0.6rem;
+}
+
+.item_discounted_price {
+  font-weight: 900;
+}
+
+.item_price {
+  margin-left: 1rem;
+  color: rgb(128, 128, 128, 0.8);
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.item_discount {
+  font-weight: bold;
+  color: #5c5c5c;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.item_quantity_control {
+  display: flex;
+  align-items: center;
+}
+
+.item_qty {
+  border: 1px solid rgb(200, 200, 200);
+  padding: 0 0.4rem;
+  border-radius: 4px;
+}
+
+.decrement_icon,
+.increment_icon {
+  background-color: #fff;
+  border-radius: 50%;
+  color: #9f3173;
+  margin: 0 0.4rem;
+  padding: 0.2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.decrement_icon:hover,
+.increment_icon:hover {
+  color: #7f275c;
+  background-color: #fff;
+}
+
+.cart_btn {
+  width: 100%;
+  margin-top: 5rem;
+  padding: 0.5rem 0;
+  outline: none;
+  color: #fff;
+  word-spacing: 2px;
+  border: 1px solid #9f3173;
+  background-color: #9f3173;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.cart_btn:hover {
+  background-color: #ea3131;
+}
