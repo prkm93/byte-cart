@@ -3,6 +3,18 @@ import { cartActionTypes } from "../utils/constant";
 const initialCartState = {
   cartItemList: [],
   isLoadingCartItems: false,
+  addressList: [
+    {
+      address: "NeelSidhi CHS, 8505 Carter Road",
+      alternatemobile: 4878794411,
+      city: "Mcloedganj",
+      _id: "2364c34d-7645-49cb-8b74-4bc5cb09711d",
+      mobile: 1293452481,
+      name: "Ravi Kumar",
+      pincode: "820598",
+      state: "Himachal Pradesh",
+    },
+  ],
 };
 
 const {
@@ -11,6 +23,9 @@ const {
   ADD_TO_CART,
   REMOVE_FROM_CART,
   UPDATE_CART,
+  GET_ADDRESS,
+  UPDATE_ADDRESS,
+  DELETE_ADDRESS,
 } = cartActionTypes;
 
 const cartReducer = (state = initialCartState, action) => {
@@ -70,6 +85,24 @@ const cartReducer = (state = initialCartState, action) => {
       return {
         ...state,
         cartItemList: updatedCartList,
+      };
+    }
+    case GET_ADDRESS: {
+      return {
+        ...state,
+        addressList: payload,
+      };
+    }
+    case UPDATE_ADDRESS: {
+      return {
+        ...state,
+        addressList: [...state.addressList, payload],
+      };
+    }
+    case DELETE_ADDRESS: {
+      return {
+        ...state,
+        addressList: payload,
       };
     }
     default:

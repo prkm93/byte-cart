@@ -41,7 +41,7 @@
 .cart_product_price_details {
   display: flex;
   justify-content: space-between;
-  margin: 0.6rem 0;
+  margin: 0.3rem 0;
   font-size: 0.9rem;
 }
 

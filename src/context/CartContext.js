@@ -115,6 +115,7 @@ const CartProvider = ({ children }) => {
     if (token) {
       getCartList();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdDiscount } from "react-icons/md";
 
 import { useCart } from "../../context/CartContext";
@@ -8,9 +8,11 @@ import Address from "./Address/Address";
 
 const Checkout = () => {
   const {
-    cartState: { cartItemList },
+    cartState: { cartItemList, addressList },
+    cartDispatch,
   } = useCart();
   const coupon_discount = 0;
+  const [selectedAddress, setSelectedAddress] = useState(addressList[0]);
 
   const totalQty = cartItemList.reduce((total, item) => total + item.qty, 0);
   const totalPrice = cartItemList.reduce(
@@ -30,7 +32,12 @@ const Checkout = () => {
       <h3 className={styles.checkout_label}>Checkout</h3>
       <div className={styles.checkout_details}>
         <div>
-          <Address />
+          <Address
+            addressList={addressList}
+            selectedAddress={selectedAddress}
+            setSelectedAddress={setSelectedAddress}
+            cartDispatch={cartDispatch}
+          />
         </div>
         <div className={styles.checkout_price_details}>
           <div>
@@ -91,6 +98,17 @@ const Checkout = () => {
             <div>Total Amount</div>
             <div>{currencyFormatter.format(totalPrice - coupon_discount)}</div>
           </div>
+          <hr />
+          <div className={styles.checkout_price_detail_header}>DELIVER TO</div>
+          <hr />
+          <div className={styles.checkout_address_selected}>
+            <h6 className="fw-bold">{selectedAddress.name}</h6>
+            <div>{`${selectedAddress.address}, ${selectedAddress.city},  ${selectedAddress.state}, ${selectedAddress.pincode}`}</div>
+            <div>
+              <b>Mobile:</b> {selectedAddress.mobile}
+            </div>
+          </div>
+          <button className={styles.checkout_order_btn}>Place Order</button>
         </div>
       </div>
     </div>

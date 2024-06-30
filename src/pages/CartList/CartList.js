@@ -72,7 +72,9 @@ const CartList = () => {
             </div>
             <button
               className={styles.checkout_btn}
-              onClick={() => token && navigate("/checkout")}>
+              onClick={() =>
+                token && cartItemList.length && navigate("/checkout")
+              }>
               Checkout
             </button>
           </div>

@@ -1,3 +1,6 @@
+import { faker } from "@faker-js/faker";
+import { statesList } from "./constant";
+
 export const discountedPrice = (price, discount) => {
   return Math.floor((price * (100 - Math.floor(discount))) / 100);
 };
@@ -25,4 +28,20 @@ export const getMaxPrice = (payload) => {
     .sort((a, b) => b - a);
   const maxPrice = Math.ceil(prices[0] / 10) * 10;
   return maxPrice;
+};
+
+export const generateRandomAddress = () => {
+  return {
+    name: faker.person.fullName(),
+    mobile: faker.string.numeric({
+      length: 10,
+    }),
+    alternatemobile: faker.string.numeric({
+      length: 10,
+    }),
+    pincode: faker.location.zipCode("######"),
+    city: faker.location.city(),
+    address: faker.location.streetAddress(),
+    state: statesList[Math.floor(Math.random() * (statesList.length - 1))],
+  };
 };

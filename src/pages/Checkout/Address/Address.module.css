@@ -1,0 +1,57 @@
+.address_modal {
+  margin-top: 6rem;
+}
+
+.address_label {
+  text-align: center;
+  font-weight: bold;
+}
+
+.address_item {
+  border: 1px solid rgb(159, 49, 115, 0.1);
+  padding: 1rem 1rem 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.address_item_active {
+  background-color: rgb(159, 49, 115, 0.2);
+}
+
+.address_item:hover {
+  background-color: rgb(250, 234, 244);
+}
+
+.address_modal_header {
+  margin: 0 0 0 10rem;
+}
+
+.address_add_btn {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  border: 1px solid rgb(159, 49, 115, 0.3);
+  cursor: pointer;
+  background-color: rgb(174, 54, 126);
+  color: #fff;
+}
+
+.address_radio_input {
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+}
+
+.address_item_label {
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.address_add_icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}

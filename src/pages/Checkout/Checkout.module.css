@@ -40,7 +40,7 @@
 .checkout_order_item_detail {
   display: flex;
   justify-content: space-between;
-  margin: 0.4rem 0;
+  margin: 0.2rem 0;
   font-size: 0.9rem;
 }
 
@@ -84,4 +84,27 @@
 
 .checkout_display > div:nth-child(2) {
   font-weight: 600;
+}
+
+.checkout_address_selected {
+  font-size: 0.85rem;
+}
+
+.checkout_order_btn {
+  padding: 0.5rem 1rem;
+  outline: none;
+  width: 100%;
+  color: #fff;
+  word-spacing: 2px;
+  border: none;
+  background-image: linear-gradient(to right, #00b09b, #96c93d);
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.checkout_order_btn:hover {
+  background-image: linear-gradient(to right, #009a88, #8aba38);
 }
