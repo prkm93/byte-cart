@@ -60,7 +60,7 @@ const CartList = () => {
         </div>
       ) : (
         <div className={styles.product_unavailable}>
-          Oops, no items found! Please add items in your cart!
+          Oops, no items found! Add items in cart and start shopping!
         </div>
       )}
     </div>

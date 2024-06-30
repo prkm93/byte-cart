@@ -1,16 +1,22 @@
+.wishlist_container {
+  padding: 4rem 2rem 2rem 2rem;
+  min-height: 100vh;
+}
+
+.wishlist_header {
+  text-align: center;
+}
+
 .productList {
-  /* width: 85vw; */
   display: flex;
-  padding: 6rem 1rem 2rem 1rem;
+  padding: 1rem;
   flex-wrap: wrap;
   gap: 1rem;
-  min-height: 100vh;
 }
 
 .product_unavailable {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.5rem;
-  padding-left: 30rem;
+  font-size: 1.2rem;
 }
