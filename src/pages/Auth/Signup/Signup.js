@@ -53,7 +53,7 @@ const Signup = () => {
   return (
     <div className={styles.signup_page}>
       <div className={styles.form_container}>
-        <h2 className={styles.form_header}>Sign Up</h2>
+        <h3 className={styles.form_header}>Sign Up</h3>
         <form className={styles.form} onSubmit={handleSignUp}>
           <div className={styles.input_wrapper}>
             <label className={styles.input_label} htmlFor="firstName">

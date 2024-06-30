@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div className={styles.login_page}>
       <div className={styles.form_container}>
-        <h2 className={styles.form_header}>Sign In</h2>
+        <h3 className={styles.form_header}>Sign In</h3>
         <form className={styles.form} onSubmit={handleLogin}>
           <div className={styles.input_wrapper}>
             <label className={styles.input_label} htmlFor="emailAddress">

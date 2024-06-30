@@ -53,69 +53,65 @@ const Header = () => {
         />
         <CiSearch className={styles.search_icon} />
       </div>
-      <div>
-        <ul className={styles.nav_links}>
-          <li className={styles.nav_item}>
-            <Link
-              className={styles.nav_explore_link}
-              onClick={() => {
-                handleLoader(true);
-                setTimeout(() => {
-                  handleLoader(false);
-                  navigate("/products");
-                }, 500);
-              }}>
-              Explore
-            </Link>
-          </li>
-          <li className={styles.nav_item}>
-            {token ? (
-              <CgProfile className={styles.profile_icon} />
-            ) : (
-              <button
-                className={styles.btn_login}
-                onClick={() => navigate("/login")}>
-                Login
-              </button>
-            )}
-          </li>
-          <li className={styles.nav_item}>
-            <div className={styles.nav_icon_container}>
-              <CiHeart
-                className={styles.nav_item_icon}
-                onClick={() =>
-                  token ? navigate("/wishlist") : navigate("/login")
-                }
-              />
-              {token && wishlistProducts.length > 0 && (
-                <div className={styles.wishlist_count}>
-                  {wishlistProducts.length}
-                </div>
-              )}
-            </div>
-          </li>
-          <li className={styles.nav_item}>
-            <div className={styles.nav_icon_container}>
-              <IoCartOutline
-                className={styles.nav_item_icon}
-                onClick={() => navigate("/cartlist")}
-              />
-              {token && cartItemList.length > 0 && (
-                <div className={styles.wishlist_count}>
-                  {cartItemList.length}
-                </div>
-              )}
-            </div>
-          </li>
-          {token && (
-            <li className={styles.nav_item}>
-              <button className={styles.btn_login} onClick={onLogoutHandler}>
-                Logout
-              </button>
-            </li>
+      <ul className={styles.nav_links}>
+        <li className={styles.nav_item}>
+          <Link
+            className={styles.nav_explore_link}
+            onClick={() => {
+              handleLoader(true);
+              setTimeout(() => {
+                handleLoader(false);
+                navigate("/products");
+              }, 500);
+            }}>
+            Explore
+          </Link>
+        </li>
+        <li className={styles.nav_item}>
+          {token ? (
+            <CgProfile className={styles.profile_icon} />
+          ) : (
+            <button
+              className={styles.btn_login}
+              onClick={() => navigate("/login")}>
+              Login
+            </button>
           )}
-        </ul>
-      </div>
+        </li>
+        <li className={styles.nav_item}>
+          <div className={styles.nav_icon_container}>
+            <CiHeart
+              className={styles.nav_item_icon}
+              onClick={() =>
+                token ? navigate("/wishlist") : navigate("/login")
+              }
+            />
+            {token && wishlistProducts.length > 0 && (
+              <div className={styles.wishlist_count}>
+                {wishlistProducts.length}
+              </div>
+            )}
+          </div>
+        </li>
+        <li className={styles.nav_item}>
+          <div className={styles.nav_icon_container}>
+            <IoCartOutline
+              className={styles.nav_item_icon}
+              onClick={() => navigate("/cartlist")}
+            />
+            {token && cartItemList.length > 0 && (
+              <div className={styles.wishlist_count}>{cartItemList.length}</div>
+            )}
+          </div>
+        </li>
+        {token && (
+          <li className={styles.nav_item}>
+            <button className={styles.btn_login} onClick={onLogoutHandler}>
+              Logout
+            </button>
+          </li>
+        )}
+      </ul>
     </div>
   );
 };

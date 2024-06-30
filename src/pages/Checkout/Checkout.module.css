@@ -1,6 +1,6 @@
 .checkout_container {
   min-height: 100vh;
-  padding: 6rem 5rem 2rem 5rem;
+  padding: 5rem 5rem 2rem 5rem;
 }
 .checkout_label {
   text-align: center;
@@ -40,7 +40,7 @@
 .checkout_order_item_detail {
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem 0;
+  margin: 0.4rem 0;
   font-size: 0.9rem;
 }
 
@@ -79,7 +79,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
-  margin: 0.6rem 0;
+  margin: 0.4rem 0;
 }
 
 .checkout_display > div:nth-child(2) {

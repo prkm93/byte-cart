@@ -1640,6 +1640,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Himalaya",
     category: "groceries",
     description:
       "Fresh and crisp apples, perfect for snacking or incorporating into various recipes.",
@@ -1696,6 +1697,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Awesome non-veg",
     category: "groceries",
     description:
       "High-quality beef steak, great for grilling or cooking to your preferred level of doneness.",
@@ -1754,6 +1756,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Love Pets",
     category: "groceries",
     description:
       "Nutritious cat food formulated to meet the dietary needs of your feline friend.",
@@ -1812,6 +1815,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Awesome non-veg",
     category: "groceries",
     description:
       "Fresh and tender chicken meat, suitable for various culinary preparations.",
@@ -1871,6 +1875,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Patanjali",
     category: "groceries",
     description:
       "Versatile cooking oil suitable for frying, sautéing, and various culinary applications.",
@@ -1929,6 +1934,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side.",
@@ -1987,6 +1993,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Love Pets",
     category: "groceries",
     description:
       "Specially formulated dog food designed to provide essential nutrients for your canine companion.",
@@ -2045,6 +2052,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Awesome non-veg",
     category: "groceries",
     description:
       "Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.",
@@ -2101,6 +2109,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Awesome non-veg",
     category: "groceries",
     description:
       "Quality fish steak, suitable for grilling, baking, or pan-searing.",
@@ -2159,6 +2168,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.",
@@ -2217,6 +2227,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Spicy green chili pepper, ideal for adding heat to your favorite recipes.",
@@ -2275,6 +2286,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Dabur",
     category: "groceries",
     description:
       "Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.",
@@ -2333,6 +2345,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Amul",
     category: "groceries",
     description:
       "Creamy and delicious ice cream, available in various flavors for a delightful treat.",
@@ -2394,6 +2407,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Refreshing fruit juice, packed with vitamins and great for staying hydrated.",
@@ -2450,6 +2464,7 @@ export const products = [
   },
   {
     availabilityStatus: "Low Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Nutrient-rich kiwi, perfect for snacking or adding a tropical twist to your dishes.",
@@ -2506,6 +2521,7 @@ export const products = [
   },
   {
     availabilityStatus: "Out of Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Zesty and tangy lemons, versatile for cooking, baking, or making refreshing beverages.",
@@ -2562,6 +2578,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Amul",
     category: "groceries",
     description:
       "Fresh and nutritious milk, a staple for various recipes and daily consumption.",
@@ -2618,6 +2635,7 @@ export const products = [
   },
   {
     availabilityStatus: "Out of Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Sweet and juicy mulberries, perfect for snacking or adding to desserts and cereals.",
@@ -2676,6 +2694,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Amul",
     category: "groceries",
     description:
       "Quality coffee from Nescafe, available in various blends for a rich and satisfying cup.",
@@ -2734,6 +2753,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Versatile and starchy potatoes, great for roasting, mashing, or as a side dish.",
@@ -2792,6 +2812,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Muscle Blaze",
     category: "groceries",
     description:
       "Nutrient-packed protein powder, ideal for supplementing your diet with essential proteins.",
@@ -2850,6 +2871,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Flavorful and aromatic red onions, perfect for adding depth to your savory dishes.",
@@ -2908,6 +2930,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "ITC",
     category: "groceries",
     description:
       "High-quality rice, a staple for various cuisines and a versatile base for many dishes.",
@@ -2964,6 +2987,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Coca Cola",
     category: "groceries",
     description:
       "Assorted soft drinks in various flavors, perfect for refreshing beverages.",
@@ -3022,6 +3046,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Fresh Veggies",
     category: "groceries",
     description:
       "Sweet and succulent strawberries, great for snacking, desserts, or blending into smoothies.",
@@ -3080,6 +3105,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "ITC",
     category: "groceries",
     description:
       "Convenient tissue paper box for everyday use, providing soft and absorbent tissues.",
@@ -3139,6 +3165,7 @@ export const products = [
   },
   {
     availabilityStatus: "In Stock",
+    brand: "Bisleri",
     category: "groceries",
     description:
       "Pure and refreshing bottled water, essential for staying hydrated throughout the day.",

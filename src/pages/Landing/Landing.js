@@ -37,7 +37,7 @@ const Landing = () => {
         alt="electronics thumbail"
       />
       <div className={styles.category_label}>
-        <h1>What are you shopping for today?</h1>
+        <h2>What are you shopping for today?</h2>
       </div>
       <div className={styles.category_section}>
         {categoryList &&

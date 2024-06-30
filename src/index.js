@@ -9,6 +9,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { makeServer } from "./server";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Call make Server
 makeServer();

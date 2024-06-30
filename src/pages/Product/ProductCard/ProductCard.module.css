@@ -1,7 +1,7 @@
 .product_card {
   width: 20rem;
   font-size: 0.9rem;
-  height: 21.8rem;
+  height: 23rem;
   border: 1px solid rgb(152, 152, 152, 0.3);
   position: relative;
   border-radius: 10px;
@@ -78,7 +78,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   background-color: #e5d4de;
   padding: 0.3rem;
   color: rgb(76, 23, 55, 0.5);
@@ -100,9 +100,9 @@
 
 .star_icon {
   position: absolute;
-  padding: 0.3rem;
-  top: 14.4rem;
-  font-size: 1rem;
+  padding: 0.5rem;
+  bottom: 6.9rem;
+  font-size: 1.87rem;
   background-color: #e5d4de;
   color: rgb(76, 23, 55, 0.5);
 }
@@ -111,8 +111,8 @@
   position: absolute;
   padding: 0.3rem;
   left: 1.4rem;
-  top: 14.4rem;
-  font-size: 0.9rem;
+  bottom: 6.9rem;
+  font-size: 0.85rem;
   border-top-right-radius: 5px;
   background-color: #e5d4de;
 }

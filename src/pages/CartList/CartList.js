@@ -31,7 +31,7 @@ const CartList = () => {
 
   return (
     <div className={styles.cart_container}>
-      <h3 className={styles.cart_header}>My Cart ({cartItemList.length})</h3>
+      <h4 className={styles.cart_header}>My Cart ({cartItemList.length})</h4>
       {cartItemList.length > 0 ? (
         <div className={styles.cart_wrapper}>
           <div className={styles.cart_items_list}>
