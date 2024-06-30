@@ -17,6 +17,7 @@ import Product from "./pages/Product";
 import WishList from "./pages/WishList";
 import CartList from "./pages/CartList";
 import ProductDetail from "./pages/Product/ProductDetail";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const { isLoading } = useAuth();
@@ -41,6 +42,7 @@ function App() {
         <Route path="/products" element={<Product />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cartlist" element={<CartList />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/products/:productId" element={<ProductDetail />} />
       </Routes>
       <Footer />

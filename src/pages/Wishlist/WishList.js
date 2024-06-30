@@ -8,7 +8,7 @@ const Wishlist = () => {
   const {
     wishlistState: { wishlistProducts },
   } = useWishlist();
-  console.log("wishlistProducts ==>", wishlistProducts);
+
   document.title = "Wishlist | Retail Store";
 
   return (
