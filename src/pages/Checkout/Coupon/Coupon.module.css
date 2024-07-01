@@ -1,0 +1,23 @@
+.coupon_modal {
+  margin-top: 10rem;
+}
+
+.coupon_header {
+  margin-left: 9rem;
+}
+
+.coupon_offer {
+  border: 1px solid rgb(159, 49, 115, 0.4);
+  padding: 0.7rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.coupon_error {
+  color: red;
+}
+.coupon_offer_radio_label {
+  cursor: pointer;
+}

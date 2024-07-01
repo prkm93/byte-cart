@@ -82,6 +82,12 @@
   margin: 0.4rem 0;
 }
 
+.clear_coupon {
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 .checkout_display > div:nth-child(2) {
   font-weight: 600;
 }
@@ -107,4 +113,11 @@
 
 .checkout_order_btn:hover {
   background-image: linear-gradient(to right, #009a88, #8aba38);
+}
+
+.cart_savings {
+  text-align: start;
+  margin-top: 1rem;
+  color: #01ae01;
+  font-weight: 600;
 }

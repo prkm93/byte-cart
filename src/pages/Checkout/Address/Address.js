@@ -109,7 +109,7 @@ const Address = ({
           show={show}
           onHide={handleClose}
           className={styles.address_modal}>
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title className={styles.address_modal_header}>
               Add Address
             </Modal.Title>
