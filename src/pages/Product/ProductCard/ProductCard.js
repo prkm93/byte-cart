@@ -100,7 +100,9 @@ const ProductCard = (product) => {
       Boolean(cartItemList.find((item) => item._id === _id)) ? (
         <button
           className={`${styles.cart_btn} ${
-            availabilityStatus === "Out of Stock" && styles.cart_btn_disabled
+            availabilityStatus === "Out of Stock"
+              ? styles.cart_btn_disabled
+              : ""
           } ${styles.cart_btn_added}`}
           disabled={availabilityStatus === "Out of Stock"}
           onClick={() => navigate("/cartlist")}>
@@ -109,7 +111,9 @@ const ProductCard = (product) => {
       ) : (
         <button
           className={`${styles.cart_btn} ${
-            availabilityStatus === "Out of Stock" && styles.cart_btn_disabled
+            availabilityStatus === "Out of Stock"
+              ? styles.cart_btn_disabled
+              : ""
           }`}
           disabled={availabilityStatus === "Out of Stock"}
           onClick={() =>

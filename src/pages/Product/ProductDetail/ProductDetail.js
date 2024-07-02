@@ -1,8 +1,9 @@
 import React from "react";
-// import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
 
 import { useProducts } from "../../../context/ProductContext";
+import { useCart } from "../../../context/CartContext";
 import { discountedPrice, currencyFormatter } from "../../../utils/utils";
 import styles from "./ProductDetail.module.css";
 
@@ -10,6 +11,13 @@ const ProductDetail = () => {
   const {
     productState: { productDetail },
   } = useProducts();
+  const {
+    cartState: { cartItemList },
+    addtoCartHandler,
+  } = useCart();
+  const navigate = useNavigate();
+
+  const token = JSON.parse(localStorage.getItem("userInfo"))?.encodedToken;
 
   const {
     _id,
@@ -65,7 +73,25 @@ const ProductDetail = () => {
             <span className={styles.product_detail_label}>In Stock:</span>{" "}
             {`${stock > 0 ? "available" : "Out of stock"}`}
           </div>
-          <button className={styles.product_add_cart_btn}>Add to Cart</button>
+          {token &&
+          cartItemList.length > 0 &&
+          Boolean(cartItemList.find((item) => item._id === _id)) ? (
+            <button
+              className={`${styles.product_add_cart_btn} ${styles.cart_btn_added}`}
+              onClick={() => navigate("/cartlist")}>
+              Go to cart
+            </button>
+          ) : (
+            <button
+              className={styles.product_add_cart_btn}
+              onClick={() =>
+                token
+                  ? addtoCartHandler(productDetail, token)
+                  : navigate("/login")
+              }>
+              Add to cart
+            </button>
+          )}
         </div>
       </div>
     </div>
