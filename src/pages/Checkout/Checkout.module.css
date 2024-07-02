@@ -96,6 +96,11 @@
   font-size: 0.85rem;
 }
 
+.checkout_coupon_offer {
+  color: rgb(255, 94, 0);
+  font-weight: 800;
+}
+
 .checkout_order_btn {
   padding: 0.5rem 1rem;
   outline: none;

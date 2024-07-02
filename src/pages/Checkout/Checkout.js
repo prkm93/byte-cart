@@ -112,7 +112,9 @@ const Checkout = () => {
           </div>
           {Boolean(couponOffer.value) && (
             <div className={styles.checkout_display}>
-              <div className={styles.checkout_coupon}>{couponOffer.offer}</div>
+              <div className={styles.checkout_coupon_offer}>
+                {couponOffer.offer}
+              </div>
               <div
                 className={styles.clear_coupon}
                 onClick={() => setCouponOffer({ value: "", offer: "" })}>
