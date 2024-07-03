@@ -19,6 +19,7 @@ import CartList from "./pages/CartList";
 import ProductDetail from "./pages/Product/ProductDetail";
 import Checkout from "./pages/Checkout";
 import Profile from "./pages/Profile";
+import { PrivateRoute } from "./components/Routes/ProtectedRoute";
 
 function App() {
   const { isLoading } = useAuth();
@@ -41,11 +42,46 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/products" element={<Product />} />
-        <Route path="/wishlist" element={<WishList />} />
-        <Route path="/cartlist" element={<CartList />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/products/:productId" element={<ProductDetail />} />
+        <Route
+          path="/wishlist"
+          element={
+            <PrivateRoute>
+              <WishList />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/cartlist"
+          element={
+            <PrivateRoute>
+              <CartList />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/products/:productId"
+          element={
+            <PrivateRoute>
+              <ProductDetail />
+            </PrivateRoute>
+          }
+        />
       </Routes>
       <Footer />
       <ToastSetter />

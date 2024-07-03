@@ -99,6 +99,7 @@
 .checkout_coupon_offer {
   color: rgb(255, 94, 0);
   font-weight: 800;
+  margin-top: 0.4rem;
 }
 
 .checkout_order_btn {

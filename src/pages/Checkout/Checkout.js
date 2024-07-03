@@ -14,7 +14,7 @@ import { popper } from "../../utils/popper";
 
 const Checkout = () => {
   const {
-    cartState: { cartItemList, addressList, orderedList },
+    cartState: { cartItemList, addressList },
     cartDispatch,
   } = useCart();
   const [selectedAddress, setSelectedAddress] = useState(addressList[0]);
@@ -64,9 +64,8 @@ const Checkout = () => {
           },
         },
       });
-      console.log("orderedList", orderedList);
       id = setTimeout(() => {
-        navigate("/");
+        navigate("/products");
       }, 3000);
     }
 
