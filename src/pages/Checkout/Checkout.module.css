@@ -126,3 +126,16 @@
   color: #01ae01;
   font-weight: 600;
 }
+
+.checkout_msg {
+  width: 100%;
+  padding-top: 6rem;
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.75rem;
+  color: #01ae01;
+  font-weight: 700;
+}

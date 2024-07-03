@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MdDiscount } from "react-icons/md";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 import Address from "./Address";
 import CouponModal from "./Coupon";
 import { useCart } from "../../context/CartContext";
 import { discountedPrice, currencyFormatter } from "../../utils/utils";
+import { cartActionTypes } from "../../utils/constant";
+import apparel_logo from "../../logos/apparel-icon.jpg";
 import styles from "./Checkout.module.css";
+import { popper } from "../../utils/popper";
 
 const Checkout = () => {
   const {
-    cartState: { cartItemList, addressList },
+    cartState: { cartItemList, addressList, orderedList },
     cartDispatch,
   } = useCart();
   const [selectedAddress, setSelectedAddress] = useState(addressList[0]);
@@ -18,6 +23,15 @@ const Checkout = () => {
     value: 0,
     offer: "",
   });
+  const [orderSummary, setOrderSummary] = useState({
+    msg: false,
+    id: null,
+  });
+  const navigate = useNavigate();
+
+  const { CLEAR_CART, ADD_ORDER } = cartActionTypes;
+
+  const userDetails = JSON.parse(localStorage.getItem("userInfo"))?.user;
 
   const totalQty = cartItemList.reduce((total, item) => total + item.qty, 0);
   const totalPrice = cartItemList.reduce(
@@ -31,10 +45,107 @@ const Checkout = () => {
     (total, item) => total + item.price * item.qty,
     0
   );
-
   const couponDiscount = (Number(couponOffer.value) / 100) * totalPrice;
-
   const finalTotalPrice = totalPrice - couponDiscount;
+
+  useEffect(() => {
+    let id = null;
+    if (orderSummary.msg) {
+      popper();
+      cartDispatch({
+        type: ADD_ORDER,
+        payload: {
+          order: {
+            id: orderSummary.id,
+            cart: orderSummary.cart,
+            address: selectedAddress,
+            amount: finalTotalPrice,
+            date: new Date(),
+          },
+        },
+      });
+      console.log("orderedList", orderedList);
+      id = setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    }
+
+    return () => {
+      clearTimeout(id);
+    };
+  }, [orderSummary]);
+
+  const loadScript = async (url) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = url;
+
+      script.onload = () => {
+        resolve(true);
+      };
+
+      script.onerror = () => {
+        resolve(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
+
+  const showRazorpayPaymentDialog = async () => {
+    const response = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!response) {
+      toast.error("Razorpay SDK failed to load, check you connection");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_SR2urKhQGjFxHb",
+      amount: Math.round(finalTotalPrice) * 100,
+      currency: "INR",
+      name: "Apparel Store",
+      description: "Thank you for shopping with us",
+      image: { apparel_logo },
+      handler: function (response) {
+        setOrderSummary({
+          msg: true,
+          cart: cartItemList,
+          id: response.razorpay_payment_id,
+        });
+        cartDispatch({
+          type: CLEAR_CART,
+        });
+      },
+      prefill: {
+        name: `${userDetails.firstName} ${userDetails.lastName}`,
+        email: userDetails.email,
+        contact: "9877821023",
+      },
+      theme: {
+        color: "rgb(159, 49, 115, 0.2)",
+      },
+    };
+
+    const paymentObj = new window.Razorpay(options);
+    paymentObj.open();
+  };
+
+  const handlePlaceOrder = () => {
+    selectedAddress.address
+      ? showRazorpayPaymentDialog()
+      : toast.error("Please select address");
+  };
+
+  if (orderSummary.msg) {
+    return (
+      <div className={styles.checkout_msg}>
+        Your order has been successfully placed
+      </div>
+    );
+  }
 
   return (
     <div className={styles.checkout_container}>
@@ -144,7 +255,11 @@ const Checkout = () => {
               <b>Mobile:</b> {selectedAddress.mobile}
             </div>
           </div>
-          <button className={styles.checkout_order_btn}>Place Order</button>
+          <button
+            className={styles.checkout_order_btn}
+            onClick={handlePlaceOrder}>
+            Place Order
+          </button>
         </div>
       </div>
     </div>

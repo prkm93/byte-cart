@@ -15,6 +15,7 @@ const initialCartState = {
       state: "Himachal Pradesh",
     },
   ],
+  orderedList: [],
 };
 
 const {
@@ -22,10 +23,12 @@ const {
   GET_CART,
   ADD_TO_CART,
   REMOVE_FROM_CART,
+  CLEAR_CART,
   UPDATE_CART,
   GET_ADDRESS,
   UPDATE_ADDRESS,
   DELETE_ADDRESS,
+  ADD_ORDER,
 } = cartActionTypes;
 
 const cartReducer = (state = initialCartState, action) => {
@@ -53,6 +56,12 @@ const cartReducer = (state = initialCartState, action) => {
       return {
         ...state,
         cartItemList: state.cartItemList.filter((item) => item._id !== payload),
+      };
+    }
+    case CLEAR_CART: {
+      return {
+        ...state,
+        cartItemList: [],
       };
     }
     case UPDATE_CART: {
@@ -103,6 +112,12 @@ const cartReducer = (state = initialCartState, action) => {
       return {
         ...state,
         addressList: payload,
+      };
+    }
+    case ADD_ORDER: {
+      return {
+        ...state,
+        orderedList: [...state.orderedList, payload],
       };
     }
     default:
