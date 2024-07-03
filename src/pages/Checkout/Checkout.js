@@ -73,6 +73,7 @@ const Checkout = () => {
     return () => {
       clearTimeout(id);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderSummary]);
 
   const loadScript = async (url) => {
