@@ -1,0 +1,25 @@
+.profile_container {
+  min-height: 100vh;
+  padding: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.profile_tab_container {
+  border: 1px solid black;
+  width: 30rem;
+  height: auto;
+}
+
+.profile_tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_tab {
+  border: 1px solid black;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+}

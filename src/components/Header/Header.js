@@ -69,7 +69,10 @@ const Header = () => {
         </li>
         <li className={styles.nav_item}>
           {token ? (
-            <CgProfile className={styles.profile_icon} />
+            <CgProfile
+              className={styles.profile_icon}
+              onClick={() => navigate("/profile")}
+            />
           ) : (
             <button
               className={styles.btn_login}

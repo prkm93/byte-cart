@@ -11,6 +11,7 @@ import { cartActionTypes } from "../../utils/constant";
 import apparel_logo from "../../logos/apparel-icon.jpg";
 import styles from "./Checkout.module.css";
 import { popper } from "../../utils/popper";
+import successSound from "../../audio/success-sound.mp3";
 
 const Checkout = () => {
   const {
@@ -66,7 +67,7 @@ const Checkout = () => {
       });
       id = setTimeout(() => {
         navigate("/products");
-      }, 3000);
+      }, 4000);
     }
 
     return () => {
@@ -143,6 +144,9 @@ const Checkout = () => {
     return (
       <div className={styles.checkout_msg}>
         Your order has been successfully placed
+        <audio autoPlay>
+          <source src={successSound} type="audio/mpeg" />
+        </audio>
       </div>
     );
   }
