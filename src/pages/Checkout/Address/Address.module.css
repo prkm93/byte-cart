@@ -1,5 +1,6 @@
 .address_modal {
-  margin-top: 6rem;
+  margin-top: 5rem;
+  /* margin-bottom: 4rem; */
 }
 
 .address_label {
@@ -54,4 +55,30 @@
 .address_add_icon {
   font-size: 1.5rem;
   margin-right: 1rem;
+}
+
+.modal_footer {
+  justify-content: flex-start;
+}
+
+.modal_btn {
+  font-size: 0.9rem;
+}
+
+@media (width <= 375px) {
+  .modal_footer {
+    justify-content: flex-start;
+  }
+
+  .address_modal_header {
+    margin-left: 4rem;
+  }
+
+  .address_textarea {
+    height: 5rem;
+  }
+
+  .modal_btn {
+    font-size: 0.8rem;
+  }
 }

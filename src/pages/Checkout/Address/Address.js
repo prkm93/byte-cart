@@ -55,7 +55,7 @@ const Address = ({
   };
 
   return (
-    <div>
+    <>
       <h4 className={styles.address_label}>Address details</h4>
       <div>
         <div>
@@ -188,6 +188,7 @@ const Address = ({
               </Form.Group>
               <Form.Group className="mb-3" controlId="address">
                 <Form.Control
+                  className={styles.address_textarea}
                   as="textarea"
                   name="address"
                   placeholder="House no, road , colony"
@@ -197,19 +198,29 @@ const Address = ({
                   onChange={handleFormInputChange}
                 />
               </Form.Group>
-              <Modal.Footer>
-                <Button variant="primary" type="submit">
+              <Modal.Footer className={styles.modal_footer}>
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className={styles.modal_btn}>
                   Add
                 </Button>
                 <Button
                   variant="secondary"
-                  onClick={() => setformData(formInitialObj)}>
+                  onClick={() => setformData(formInitialObj)}
+                  className={styles.modal_btn}>
                   Reset
                 </Button>
-                <Button variant="warning" onClick={handleRandomAddress}>
+                <Button
+                  variant="warning"
+                  onClick={handleRandomAddress}
+                  className={styles.modal_btn}>
                   Random Data
                 </Button>
-                <Button variant="danger" onClick={handleClose}>
+                <Button
+                  variant="danger"
+                  onClick={handleClose}
+                  className={styles.modal_btn}>
                   Cancel
                 </Button>
               </Modal.Footer>
@@ -217,7 +228,7 @@ const Address = ({
           </Modal.Body>
         </Modal>
       </div>
-    </div>
+    </>
   );
 };
 

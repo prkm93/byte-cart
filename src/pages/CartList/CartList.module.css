@@ -11,17 +11,18 @@
 .cart_wrapper {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .cart_items_list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-right: 1rem;
 }
 
 .cart_price_details {
-  width: 25rem;
+  width: 28rem;
   height: fit-content;
   border-radius: 10px;
   background-color: #f8f8f8;
@@ -92,4 +93,16 @@
 
 .checkout_btn:hover {
   background-image: linear-gradient(to right, #de492b, #e28e19);
+}
+
+@media (width <=820px) {
+  .cart_wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (width <=375px) {
+  .cart_price_details {
+    width: fit-content;
+  }
 }
