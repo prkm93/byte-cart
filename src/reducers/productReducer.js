@@ -53,7 +53,7 @@ export const productReducer = (state = initialProductState, action) => {
     case SEARCH_PRODUCT:
       return {
         ...state,
-        searchProduct: payload.toLowerCase(),
+        searchProduct: payload,
       };
     case FILTER_BY_PRICE:
       return {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
@@ -15,11 +15,7 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   const { token, onLogoutHandler } = useAuth();
-  const {
-    productState: { searchProduct },
-    productDispatch,
-    handleLoader,
-  } = useProducts();
+  const { productDispatch, handleLoader } = useProducts();
   const {
     wishlistState: { wishlistProducts },
   } = useWishlist();
@@ -28,6 +24,26 @@ const Header = () => {
   } = useCart();
   const { SEARCH_PRODUCT } = filterActionTypes;
   const navigate = useNavigate();
+  const [searchWord, setSearchWord] = useState("");
+  const timerId = useRef();
+
+  const handleSearch = (e) => {
+    setSearchWord(e.target.value);
+  };
+
+  useEffect(() => {
+    if (searchWord.length !== "") {
+      clearTimeout(timerId.current);
+
+      timerId.current = setTimeout(() => {
+        productDispatch({
+          type: SEARCH_PRODUCT,
+          payload: searchWord.trim(),
+        });
+      }, 800);
+    }
+    // eslint-disable-next-line
+  }, [searchWord]);
 
   return (
     <div className={styles.header_container}>
@@ -43,13 +59,8 @@ const Header = () => {
           className={styles.search_box}
           type="text"
           placeholder="search"
-          value={searchProduct}
-          onChange={(e) =>
-            productDispatch({
-              type: SEARCH_PRODUCT,
-              payload: e.target.value,
-            })
-          }
+          value={searchWord}
+          onChange={handleSearch}
         />
         <CiSearch className={styles.search_icon} />
       </div>
