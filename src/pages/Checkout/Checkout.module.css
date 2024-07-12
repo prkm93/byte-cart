@@ -16,6 +16,7 @@
 
 .checkout_price_details {
   height: fit-content;
+  min-width: 22rem;
   width: 25rem;
   border-radius: 10px;
   background-color: #f8f8f8;
