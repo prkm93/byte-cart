@@ -60,7 +60,7 @@ const Checkout = () => {
             id: orderSummary.id,
             cart: orderSummary.cart,
             address: selectedAddress,
-            amount: finalTotalPrice,
+            amount: orderSummary.totalAmount,
             date: new Date(),
           },
         },
@@ -115,6 +115,7 @@ const Checkout = () => {
           msg: true,
           cart: cartItemList,
           id: response.razorpay_payment_id,
+          totalAmount: finalTotalPrice,
         });
         cartDispatch({
           type: CLEAR_CART,

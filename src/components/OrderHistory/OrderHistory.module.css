@@ -1,0 +1,12 @@
+.order_card {
+  border: 5px solid #e5d4de;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.order_product_details {
+  border: 1px solid black;
+  height: 20rem;
+  overflow-y: scroll;
+}
