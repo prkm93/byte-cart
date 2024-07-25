@@ -15,13 +15,25 @@ const Profile = () => {
           {/* <Navigate to={"/profile/details"}>Profile Details</Navigate>
           <Navigate to={"/profile/addresses"}>Addresses</Navigate>
           <Navigate to={"/profile/orders"}>Order History</Navigate> */}
-          <div className={styles.profile_tab} onClick={() => setActiveTab(0)}>
+          <div
+            className={`${styles.profile_tab} ${
+              activeTab === 0 && styles.active_tab
+            }`}
+            onClick={() => setActiveTab(0)}>
             Profile Details
           </div>
-          <div className={styles.profile_tab} onClick={() => setActiveTab(1)}>
+          <div
+            className={`${styles.profile_tab} ${
+              activeTab === 1 && styles.active_tab
+            }`}
+            onClick={() => setActiveTab(1)}>
             Addresses
           </div>
-          <div className={styles.profile_tab} onClick={() => setActiveTab(2)}>
+          <div
+            className={`${styles.profile_tab} ${
+              activeTab === 2 && styles.active_tab
+            }`}
+            onClick={() => setActiveTab(2)}>
             Order History
           </div>
         </div>
@@ -29,12 +41,10 @@ const Profile = () => {
       <AddressForm />
       <OrderHistory /> */}
 
-        <div>
-          {activeTab === 0 && <ProfileInfo />}
-          {activeTab === 1 && <AddressForm />}
-          {activeTab === 2 && <OrderHistory />}
-          <Outlet />
-        </div>
+        {activeTab === 0 && <ProfileInfo />}
+        {activeTab === 1 && <AddressForm />}
+        {activeTab === 2 && <OrderHistory />}
+        <Outlet />
       </div>
     </div>
   );

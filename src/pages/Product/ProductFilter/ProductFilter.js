@@ -36,7 +36,7 @@ const ProductFilter = () => {
 
   const categories = categoryList.map(({ categoryName }) => categoryName);
   const Ratings = [4, 3, 2, 1];
-  const StockAvailability = ["In Stock", "Out of Stock"];
+  const StockAvailability = ["In Stock", "Out of Stock", "Low Stock"];
 
   return (
     <div className={styles.filter_section}>
