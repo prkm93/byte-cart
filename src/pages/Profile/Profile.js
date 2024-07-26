@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
 import ProfileInfo from "../../components/ProfileInfo";
 import AddressForm from "../../components/AddressForm";
 import OrderHistory from "../../components/OrderHistory";
