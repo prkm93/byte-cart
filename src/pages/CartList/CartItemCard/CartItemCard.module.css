@@ -105,6 +105,11 @@
   border-radius: 4px;
 }
 
+.btn {
+  background-color: #f8f8f8;
+  border: none;
+}
+
 .decrement_icon,
 .increment_icon {
   background-color: #fff;
@@ -139,6 +144,7 @@
 
 .cart_btn:hover {
   background-color: #ea3131;
+  border: 1px solid #ea3131;
 }
 
 @media (width <=375px) {

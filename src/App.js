@@ -37,7 +37,7 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="/home" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

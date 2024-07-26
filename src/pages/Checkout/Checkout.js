@@ -67,7 +67,7 @@ const Checkout = () => {
       });
       id = setTimeout(() => {
         navigate("/products");
-      }, 4000);
+      }, 6000);
     }
 
     return () => {

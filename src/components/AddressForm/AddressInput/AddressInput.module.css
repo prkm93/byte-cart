@@ -1,0 +1,14 @@
+.address_input_wrapper {
+  /* border: 1px solid black; */
+  padding: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.address_textarea {
+  height: 5rem;
+}
+
+.modal_btn {
+  font-size: 0.9rem;
+  margin-right: 1rem;
+}

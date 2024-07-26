@@ -52,15 +52,19 @@ const CartItemCard = ({ cartItem }) => {
         <div className={styles.item_discount}>{discountPercentage}% OFF</div>
         <div className={styles.item_quantity_control}>
           <label htmlFor="quantity">Quantity:</label>
-          <FaMinusCircle
-            className={styles.decrement_icon}
-            onClick={() => updateCartHandler(_id, "decrement", token)}
-          />
+          <button className={styles.btn}>
+            <FaMinusCircle
+              className={styles.decrement_icon}
+              onClick={() => updateCartHandler(_id, "decrement", token)}
+            />
+          </button>
           <span className={styles.item_qty}>{qty}</span>
-          <FaPlusCircle
-            className={styles.increment_icon}
-            onClick={() => updateCartHandler(_id, "increment", token)}
-          />
+          <button className={styles.btn}>
+            <FaPlusCircle
+              className={styles.increment_icon}
+              onClick={() => updateCartHandler(_id, "increment", token)}
+            />
+          </button>
         </div>
         <button
           className={styles.cart_btn}

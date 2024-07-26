@@ -10,7 +10,7 @@ import { useProducts } from "../../context/ProductContext";
 import { useWishlist } from "../../context/WishlistContext";
 import { useCart } from "../../context/CartContext";
 import { filterActionTypes } from "../../utils/constant";
-import apparel_logo from "../../logos/apparel-icon.jpg";
+import ecomm_logo from "../../logos/shopping-online.jpg";
 import styles from "./Header.module.css";
 
 const Header = () => {
@@ -47,10 +47,10 @@ const Header = () => {
 
   return (
     <div className={styles.header_container}>
-      <div className={styles.logo_container} onClick={() => navigate("/home")}>
+      <div className={styles.logo_container} onClick={() => navigate("/")}>
         <img
           className={styles.cloth_logo}
-          src={apparel_logo}
+          src={ecomm_logo}
           alt="Apparel Logo"
         />{" "}
       </div>
