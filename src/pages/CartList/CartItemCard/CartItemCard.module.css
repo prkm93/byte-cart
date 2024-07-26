@@ -59,7 +59,7 @@
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  width: 12rem;
+  width: 15rem;
   background-color: #f8f8f8;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -146,7 +146,7 @@
     width: fit-content;
   }
   .item_details {
-    width: 11rem;
+    width: 12rem;
   }
   .item_img_wrapper {
     width: 9rem;

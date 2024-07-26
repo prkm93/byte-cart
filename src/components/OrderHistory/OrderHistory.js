@@ -1,12 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
-import { currencyFormatter } from "../../utils/utils";
+import { useProducts } from "../../context/ProductContext";
+import { currencyFormatter, discountedPrice } from "../../utils/utils";
 import styles from "./OrderHistory.module.css";
 
 const OrderHistory = () => {
   const {
     cartState: { orderedList },
   } = useCart();
+  const { getProductDetails } = useProducts();
+  const navigate = useNavigate();
 
   console.log("orderedList", orderedList);
 
@@ -60,9 +64,22 @@ const OrderHistory = () => {
               </div>
               <div className={styles.order_product_details}>
                 {cart.map((item) => {
-                  const { _id, title, thumbnail, qty, price } = item;
+                  const {
+                    _id,
+                    title,
+                    thumbnail,
+                    qty,
+                    price,
+                    discountPercentage,
+                  } = item;
                   return (
-                    <div key={_id} className={styles.order_cart_detail}>
+                    <div
+                      key={_id}
+                      className={styles.order_cart_detail}
+                      onClick={() => {
+                        getProductDetails(_id);
+                        navigate(`/products/${_id}`);
+                      }}>
                       <div className={styles.order_cart_img_wrapper}>
                         <img
                           className={styles.order_cart_img}
@@ -71,9 +88,24 @@ const OrderHistory = () => {
                         />
                       </div>
                       <div className={styles.order_cart_description}>
-                        <div>{title}</div>
-                        <div>{qty}</div>
-                        <div>{price}</div>
+                        <div className={styles.order_item_title}>{title}</div>
+                        <div className={styles.order_item_qty}>
+                          Quantity: {qty}
+                        </div>
+                        <div className={styles.order_item_price}>
+                          {currencyFormatter.format(price)}
+                        </div>
+                        <div className={styles.order_item_discount}>
+                          {Math.floor(discountPercentage)}% OFF
+                        </div>
+                        <div className={styles.order_item_discounted_price}>
+                          {currencyFormatter.format(
+                            discountedPrice(
+                              price,
+                              Math.floor(discountPercentage)
+                            )
+                          )}
+                        </div>
                       </div>
                     </div>
                   );

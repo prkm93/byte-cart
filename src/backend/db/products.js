@@ -3536,7 +3536,7 @@ export const products = [
       height: 26.88,
       width: 28.75,
     },
-    discountPercentage: 0.29,
+    discountPercentage: 2.29,
     _id: 11,
     images: [
       "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/1.png",

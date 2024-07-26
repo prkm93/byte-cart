@@ -53,6 +53,7 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .order_cart_img {
@@ -71,5 +72,37 @@
   display: flex;
   flex-direction: column;
   margin-left: 4rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
+  font-size: 95%;
+}
+
+.order_item_title {
+  font-size: 1.06rem;
+  font-weight: bold;
+  padding: 0.1rem 0 0.3rem 0;
+}
+
+.order_item_discounted_price {
+  font-weight: 700;
+  font-size: 0.94rem;
+  margin-bottom: 0.2rem;
+}
+
+.order_item_qty {
+  font-weight: 600;
+}
+
+.order_item_price {
+  /* margin-left: 1rem; */
+  color: rgb(128, 128, 128, 0.8);
+  font-weight: 400;
+  text-decoration: line-through;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+}
+
+.order_item_discount {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  font-size: 0.83rem;
 }
