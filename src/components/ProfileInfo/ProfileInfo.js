@@ -17,7 +17,6 @@ const ProfileInfo = () => {
       <div className={styles.profile_detail}>
         <span className={styles.profile_detail_label}>Mobile</span>: {mobileNo}
       </div>
-      <button className={styles.profile_logout_btn}>Logout</button>
     </div>
   );
 };
