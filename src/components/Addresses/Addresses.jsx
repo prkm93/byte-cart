@@ -11,9 +11,6 @@ const Addresses = () => {
     cartState: { addressList },
   } = useCart();
   const [openAddressForm, setOpenAddressForm] = useState(false);
-  const [isEditOn, setIsEditOn] = useState(false);
-
-  console.log("addressList", addressList);
 
   return (
     <div className={styles.address_wrapper}>
@@ -33,18 +30,9 @@ const Addresses = () => {
         </div>
       )}
       {addressList.length > 0 ? (
-        addressList.map((item) => {
-          return isEditOn ? (
-            <AddressForm
-              addressData={item}
-              key={item._id}
-              isEditOn={isEditOn}
-              setIsEditOn={setIsEditOn}
-            />
-          ) : (
-            <AddressCard addressData={item} setIsEditOn={setIsEditOn} />
-          );
-        })
+        addressList.map((item) => (
+          <AddressCard key={item._id} addressData={item} />
+        ))
       ) : (
         <div>No addresses found! Please add address</div>
       )}
@@ -53,3 +41,12 @@ const Addresses = () => {
 };
 
 export default Addresses;
+
+// return isEditOn ? (
+//   <AddressForm
+//     addressData={item}
+//     key={item._id}
+//     isEditOn={isEditOn}
+//     setIsEditOn={setIsEditOn}
+//   />
+// ) : (

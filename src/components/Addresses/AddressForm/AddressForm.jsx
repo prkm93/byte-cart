@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { faker } from "@faker-js/faker";
 
 import { generateRandomAddress } from "../../../utils/utils";
@@ -11,8 +7,13 @@ import { statesList } from "../../../utils/constant";
 import styles from "./AddressForm.module.css";
 
 const AddressForm = (props) => {
-  const { openAddressForm, setOpenAddressForm, isEditOn, setIsEditOn } = props;
-  console.log(props?.addressData);
+  const {
+    openAddressForm,
+    setOpenAddressForm,
+    isEditOn,
+    setIsEditOn,
+    addressData,
+  } = props;
   const emptyAddressObj = {
     address: "",
     alternatemobile: "",
@@ -24,7 +25,7 @@ const AddressForm = (props) => {
     state: "",
   };
   const [addressField, setAddressField] = useState(
-    props?.addressData ? props.addressData : emptyAddressObj
+    addressData ? addressData : emptyAddressObj
   );
 
   const handleAddressFieldChange = (e) => {
