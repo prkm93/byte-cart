@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import ProfileInfo from "../../components/ProfileInfo";
-import AddressForm from "../../components/AddressForm";
+import Addresses from "../../components/Addresses";
 import OrderHistory from "../../components/OrderHistory";
 import styles from "./Profile.module.css";
 
@@ -43,7 +43,7 @@ const Profile = () => {
       <OrderHistory /> */}
 
         {activeTab === 0 && <ProfileInfo />}
-        {activeTab === 1 && <AddressForm />}
+        {activeTab === 1 && <Addresses />}
         {activeTab === 2 && <OrderHistory />}
         <Outlet />
       </div>

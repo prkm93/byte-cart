@@ -8,10 +8,12 @@ import { faker } from "@faker-js/faker";
 
 import { generateRandomAddress } from "../../../utils/utils";
 import { statesList } from "../../../utils/constant";
-import styles from "./AddressInput.module.css";
+import styles from "./AddressForm.module.css";
 
-const AddressInput = () => {
-  const [addressField, setAddressField] = useState({
+const AddressForm = (props) => {
+  const { openAddressForm, setOpenAddressForm, isEditOn, setIsEditOn } = props;
+  console.log(props?.addressData);
+  const emptyAddressObj = {
     address: "",
     alternatemobile: "",
     city: "",
@@ -20,15 +22,20 @@ const AddressInput = () => {
     name: "",
     pincode: "",
     state: "",
-  });
+  };
+  const [addressField, setAddressField] = useState(
+    props?.addressData ? props.addressData : emptyAddressObj
+  );
 
   const handleAddressFieldChange = (e) => {
     const { name, value } = e.target;
-
     setAddressField({ ...addressField, [name]: value });
   };
 
-  const handleClose = () => {};
+  const handleClose = () => {
+    openAddressForm && setOpenAddressForm(false);
+    isEditOn && setIsEditOn(false);
+  };
 
   const handleRandomAddress = () => {
     const completeAddress = generateRandomAddress();
@@ -49,7 +56,7 @@ const AddressInput = () => {
               <Form.Control
                 type="text"
                 name="name"
-                value={addressField.name}
+                value={addressField?.name}
                 placeholder="Name"
                 required
                 autoFocus
@@ -63,7 +70,7 @@ const AddressInput = () => {
                 type="text"
                 name="mobile"
                 placeholder="Mobile no"
-                value={addressField.mobile}
+                value={addressField?.mobile}
                 required
                 autoFocus
                 onChange={handleAddressFieldChange}
@@ -79,7 +86,7 @@ const AddressInput = () => {
                 type="text"
                 name="alternatemobile"
                 placeholder="Alternate mobile (optional)"
-                value={addressField.alternatemobile}
+                value={addressField?.alternatemobile}
                 autoFocus
                 onChange={handleAddressFieldChange}
               />
@@ -91,7 +98,7 @@ const AddressInput = () => {
                 type="text"
                 name="city"
                 placeholder="City"
-                value={addressField.city}
+                value={addressField?.city}
                 required
                 autoFocus
                 onChange={handleAddressFieldChange}
@@ -105,7 +112,7 @@ const AddressInput = () => {
               <Form.Select
                 aria-label="select state"
                 name="state"
-                value={addressField.state}
+                value={addressField?.state}
                 onChange={handleAddressFieldChange}>
                 <option>State</option>
                 {statesList.map((item) => {
@@ -125,7 +132,7 @@ const AddressInput = () => {
                 name="pincode"
                 required
                 placeholder="Postal Code"
-                value={addressField.pincode}
+                value={addressField?.pincode}
                 autoFocus
                 onChange={handleAddressFieldChange}
               />
@@ -140,7 +147,7 @@ const AddressInput = () => {
                 as="textarea"
                 name="address"
                 placeholder="House no, road , colony"
-                value={addressField.address}
+                value={addressField?.address}
                 required
                 autoFocus
                 onChange={handleAddressFieldChange}
@@ -155,18 +162,7 @@ const AddressInput = () => {
         </Button>
         <Button
           variant="secondary"
-          onClick={() =>
-            setAddressField({
-              address: "",
-              alternatemobile: "",
-              city: "",
-              _id: "",
-              mobile: "",
-              name: "",
-              pincode: "",
-              state: "",
-            })
-          }
+          onClick={() => setAddressField(emptyAddressObj)}
           className={styles.modal_btn}>
           Reset
         </Button>
@@ -187,4 +183,4 @@ const AddressInput = () => {
   );
 };
 
-export default AddressInput;
+export default AddressForm;
