@@ -18,7 +18,9 @@ const Checkout = () => {
     cartState: { cartItemList, addressList },
     cartDispatch,
   } = useCart();
-  const [selectedAddress, setSelectedAddress] = useState(addressList[0]);
+  const [selectedAddress, setSelectedAddress] = useState(
+    addressList.length > 0 ? addressList[0] : {}
+  );
   const [show, setShow] = useState(false);
   const [couponOffer, setCouponOffer] = useState({
     value: 0,
@@ -136,7 +138,7 @@ const Checkout = () => {
   };
 
   const handlePlaceOrder = () => {
-    selectedAddress.address
+    selectedAddress?.address
       ? showRazorpayPaymentDialog()
       : toast.error("Please select address");
   };
@@ -253,13 +255,20 @@ const Checkout = () => {
           <hr />
           <div className={styles.checkout_price_detail_header}>DELIVER TO</div>
           <hr />
-          <div className={styles.checkout_address_selected}>
-            <h6 className="fw-bold">{selectedAddress.name}</h6>
-            <div>{`${selectedAddress.address}, ${selectedAddress.city},  ${selectedAddress.state}, ${selectedAddress.pincode}`}</div>
-            <div>
-              <b>Mobile:</b> {selectedAddress.mobile}
+          {selectedAddress?.name ? (
+            <div className={styles.checkout_address_selected}>
+              <h6 className="fw-bold">{selectedAddress?.name}</h6>
+              <div>{`${selectedAddress?.address}, ${selectedAddress?.city},  ${selectedAddress?.state}, ${selectedAddress?.pincode}`}</div>
+              <div>
+                <b>Mobile:</b> {selectedAddress?.mobile}
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className={styles.no_address}>
+              Please add and select address
+            </div>
+          )}
+
           <button
             className={styles.checkout_order_btn}
             onClick={handlePlaceOrder}>

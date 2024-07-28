@@ -143,6 +143,10 @@
   font-weight: 700;
 }
 
+.no_address {
+  color: red;
+}
+
 @media (width <= 800px) {
   .checkout_details {
     display: flex;

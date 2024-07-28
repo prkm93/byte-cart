@@ -59,44 +59,50 @@ const Address = ({
       <h4 className={styles.address_label}>Address details</h4>
       <div>
         <div>
-          {addressList.map((item) => {
-            const {
-              address,
-              alternatemobile,
-              city,
-              _id,
-              mobile,
-              name,
-              pincode,
-              state,
-            } = item;
-            return (
-              <div
-                key={_id}
-                className={`${styles.address_item} ${
-                  _id === selectedAddress._id && styles.address_item_active
-                }`}>
-                <input
-                  type="radio"
-                  name="address-radio"
-                  id={_id}
-                  checked={_id === selectedAddress._id}
-                  className={styles.address_radio_input}
-                  onChange={() => setSelectedAddress(item)}
-                />
-                <label className={styles.address_item_label} htmlFor={_id}>
-                  <h5 className="fw-bold">{name}</h5>
-                  <div>{`${address}, ${city},  ${state}, ${pincode}`}</div>
-                  <div>
-                    <b>Mobile:</b> {mobile}
-                  </div>
-                  <div>
-                    <b>Alternate mobile:</b> {alternatemobile}
-                  </div>
-                </label>
-              </div>
-            );
-          })}
+          {addressList.length > 0 ? (
+            addressList.map((item) => {
+              const {
+                address,
+                alternatemobile,
+                city,
+                _id,
+                mobile,
+                name,
+                pincode,
+                state,
+              } = item;
+              return (
+                <div
+                  key={_id}
+                  className={`${styles.address_item} ${
+                    _id === selectedAddress._id && styles.address_item_active
+                  }`}>
+                  <input
+                    type="radio"
+                    name="address-radio"
+                    id={_id}
+                    checked={_id === selectedAddress._id}
+                    className={styles.address_radio_input}
+                    onChange={() => setSelectedAddress(item)}
+                  />
+                  <label className={styles.address_item_label} htmlFor={_id}>
+                    <h5 className="fw-bold">{name}</h5>
+                    <div>{`${address}, ${city},  ${state}, ${pincode}`}</div>
+                    <div>
+                      <b>Mobile:</b> {mobile}
+                    </div>
+                    <div>
+                      <b>Alternate mobile:</b> {alternatemobile}
+                    </div>
+                  </label>
+                </div>
+              );
+            })
+          ) : (
+            <div className={styles.no_address}>
+              No addresses found! Please add address
+            </div>
+          )}
         </div>
         <div
           variant="primary"
