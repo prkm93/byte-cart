@@ -14,7 +14,8 @@ const CouponModal = ({ show, setShow, setCouponOffer }) => {
   };
 
   const selectCouponHandler = (e) => {
-    setCoupon({ offer: e.target.value, value: e.target.id });
+    const { id, value } = e.target;
+    setCoupon({ offer: value, value: id });
     if (coupon.offer !== "") {
       setError("");
     }

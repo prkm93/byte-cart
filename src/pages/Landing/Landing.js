@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../context/ProductContext";
 import { filterActionTypes } from "../../utils/constant";
 import styles from "./Landing.module.css";
-import ecommerce_hero from "../../logos/ecommerce-hero.png";
+import ecommerce_hero from "../../logos/ecommerce-hero.jpg";
 
 const Landing = () => {
   const {

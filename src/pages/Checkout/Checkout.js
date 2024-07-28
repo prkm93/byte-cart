@@ -8,7 +8,7 @@ import CouponModal from "./Coupon";
 import { useCart } from "../../context/CartContext";
 import { discountedPrice, currencyFormatter } from "../../utils/utils";
 import { cartActionTypes } from "../../utils/constant";
-import apparel_logo from "../../logos/apparel-icon.jpg";
+import shopping_online from "../../logos/shopping-online.jpg";
 import styles from "./Checkout.module.css";
 import { popper } from "../../utils/popper";
 import successSound from "../../audio/success-sound.mp3";
@@ -67,7 +67,7 @@ const Checkout = () => {
       });
       id = setTimeout(() => {
         navigate("/products");
-      }, 6000);
+      }, 5000);
     }
 
     return () => {
@@ -109,7 +109,7 @@ const Checkout = () => {
       currency: "INR",
       name: "Apparel Store",
       description: "Thank you for shopping with us",
-      image: { apparel_logo },
+      image: { shopping_online },
       handler: function (response) {
         setOrderSummary({
           msg: true,
