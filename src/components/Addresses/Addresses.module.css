@@ -17,3 +17,10 @@
   font-size: 1.5rem;
   margin-right: 1rem;
 }
+
+.no_address {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem;
+}

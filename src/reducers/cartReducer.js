@@ -6,10 +6,10 @@ const initialCartState = {
   addressList: [
     {
       address: "NeelSidhi CHS, 8505 Carter Road",
-      alternatemobile: 4878794411,
+      alternatemobile: "4878794411",
       city: "Mcloedganj",
       _id: "2364c34d-7645-49cb-8b74-4bc5cb09711d",
-      mobile: 1293452481,
+      mobile: "1293452481",
       name: "Ravi Kumar",
       pincode: "820598",
       state: "Himachal Pradesh",
@@ -26,6 +26,7 @@ const {
   CLEAR_CART,
   UPDATE_CART,
   GET_ADDRESS,
+  ADD_ADDRESS,
   UPDATE_ADDRESS,
   DELETE_ADDRESS,
   ADD_ORDER,
@@ -102,16 +103,31 @@ const cartReducer = (state = initialCartState, action) => {
         addressList: payload,
       };
     }
-    case UPDATE_ADDRESS: {
+    case ADD_ADDRESS: {
       return {
         ...state,
         addressList: [...state.addressList, payload],
       };
     }
-    case DELETE_ADDRESS: {
+    case UPDATE_ADDRESS: {
+      const updatedAddressList = state.addressList.map((item) => {
+        if (item._id === payload._id) {
+          return payload;
+        }
+        return item;
+      });
       return {
         ...state,
-        addressList: payload,
+        addressList: updatedAddressList,
+      };
+    }
+    case DELETE_ADDRESS: {
+      const updatedAddressList = state.addressList.filter(
+        (item) => item._id !== payload
+      );
+      return {
+        ...state,
+        addressList: updatedAddressList,
       };
     }
     case ADD_ORDER: {

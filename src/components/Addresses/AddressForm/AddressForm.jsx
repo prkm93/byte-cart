@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { faker } from "@faker-js/faker";
 
+import { useCart } from "../../../context/CartContext";
+import { cartActionTypes } from "../../../utils/constant";
 import { generateRandomAddress } from "../../../utils/utils";
 import { statesList } from "../../../utils/constant";
 import styles from "./AddressForm.module.css";
@@ -27,6 +29,15 @@ const AddressForm = (props) => {
   const [addressField, setAddressField] = useState(
     addressData ? addressData : emptyAddressObj
   );
+  const {
+    cartState: { addressList },
+    cartDispatch,
+  } = useCart();
+  const { ADD_ADDRESS, UPDATE_ADDRESS } = cartActionTypes;
+
+  useEffect(() => {
+    console.log("addressList", addressList);
+  }, [addressList]);
 
   const handleAddressFieldChange = (e) => {
     const { name, value } = e.target;
@@ -46,11 +57,30 @@ const AddressForm = (props) => {
     });
   };
 
+  const handleSubmitAddress = (e) => {
+    console.log("update address", addressField);
+    e.preventDefault();
+
+    if (isEditOn) {
+      cartDispatch({
+        type: UPDATE_ADDRESS,
+        payload: addressField,
+      });
+      setIsEditOn(false);
+    }
+
+    if (openAddressForm) {
+      cartDispatch({
+        type: ADD_ADDRESS,
+        payload: addressField,
+      });
+      setOpenAddressForm(false);
+    }
+  };
+
   return (
     <Container className={styles.address_input_wrapper} fluid>
-      <Form
-      //   onSubmit={handleSubmitAddress}
-      >
+      <Form onSubmit={handleSubmitAddress}>
         <Row>
           <Col>
             <Form.Group className="mb-3" controlId="name">

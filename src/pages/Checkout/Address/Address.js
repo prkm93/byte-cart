@@ -26,7 +26,7 @@ const Address = ({
     state: "",
   };
 
-  const { UPDATE_ADDRESS } = cartActionTypes;
+  const { ADD_ADDRESS } = cartActionTypes;
   const [formData, setformData] = useState(formInitialObj);
   const [show, setShow] = useState(false);
 
@@ -48,7 +48,7 @@ const Address = ({
   const handleSubmitAddress = (e) => {
     e.preventDefault();
     cartDispatch({
-      type: UPDATE_ADDRESS,
+      type: ADD_ADDRESS,
       payload: { ...formData, _id: faker.database.mongodbObjectId() },
     });
     setShow(false);

@@ -34,7 +34,9 @@ const Addresses = () => {
           <AddressCard key={item._id} addressData={item} />
         ))
       ) : (
-        <div>No addresses found! Please add address</div>
+        <div className={styles.no_address}>
+          No addresses found! Please add address
+        </div>
       )}
     </div>
   );

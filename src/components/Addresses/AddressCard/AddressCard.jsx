@@ -7,16 +7,23 @@ import { MdOutlineLocationCity } from "react-icons/md";
 import { FaLocationPin } from "react-icons/fa6";
 
 import AddressForm from "../AddressForm";
+import { useCart } from "../../../context/CartContext";
+import { cartActionTypes } from "../../../utils/constant";
 import styles from "./AddressCard.module.css";
 
 const AddressCard = ({ addressData }) => {
+  const { cartDispatch } = useCart();
   const [isEditOn, setIsEditOn] = useState(false);
-
   const { address, alternatemobile, city, _id, mobile, name, pincode, state } =
     addressData;
+  const { DELETE_ADDRESS } = cartActionTypes;
 
-  const handleEditAddress = () => {
-    setIsEditOn(true);
+  const handleDeleteAddress = (id) => {
+    cartDispatch({
+      type: DELETE_ADDRESS,
+      payload: id,
+    });
+    setIsEditOn(false);
   };
 
   return isEditOn ? (
@@ -51,8 +58,9 @@ const AddressCard = ({ addressData }) => {
       </div>
       <div className={styles.address_ciy}>
         <MdOutlineLocationCity />
-        <div>{city},</div>
-        <div>{state}</div>
+        <div>
+          {city}, {state}
+        </div>
       </div>
       <Container>
         <Row>
@@ -60,12 +68,15 @@ const AddressCard = ({ addressData }) => {
             <Button
               variant="primary"
               className={styles.address_modify_btn}
-              onClick={handleEditAddress}>
+              onClick={() => setIsEditOn(true)}>
               Edit
             </Button>
           </Col>
           <Col>
-            <Button variant="danger" className={styles.address_modify_btn}>
+            <Button
+              variant="danger"
+              className={styles.address_modify_btn}
+              onClick={() => handleDeleteAddress(_id)}>
               Delete
             </Button>
           </Col>
